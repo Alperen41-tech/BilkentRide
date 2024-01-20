@@ -2,13 +2,11 @@ package com.alperen.bilkentride;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
 import com.alperen.bilkentride.databinding.ActivityMainBinding;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FirebaseFirestore;
+import com.alperen.bilkentride.register.EmailGet;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,11 +20,17 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        Intent intent = new Intent(MainActivity.this, EmailGet.class);
+        startActivity(intent);
+        finish();
+
 
     }
 

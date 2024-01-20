@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Text_Ubuntu_Condensed_White" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Define your default font family -->
+        <item name="android:fontFamily">@font/ubuntu_condensed</item>
+        <item name="color">@color/white</item>
+    </style>
+
+    <style name="CustomTextView">
+        <!-- Apply the font family style -->
+        <item name="android:fontFamily">@font/ubuntu_condensed</item>
+        <!-- Define other text attributes as needed -->
+        <item name="android:textSize">50dp</item>
+    </style>
+</resources>
