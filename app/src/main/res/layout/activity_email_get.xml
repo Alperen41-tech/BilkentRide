@@ -6,13 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".register.EmailGet">
 
-    <TextView
-        android:id="@+id/textView"
-        style="@style/CustomTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="40dp"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="187dp" />
+
+    <LinearLayout style="@style/Regular_LinearLayout_ForTop">
+
+        <ImageButton
+            style="@style/Regular_Backwards_Arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></ImageButton>
+
+        <TextView
+            style="@style/Regular_Page_Heading_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register"></TextView>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
