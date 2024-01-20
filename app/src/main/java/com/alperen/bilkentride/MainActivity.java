@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.alperen.bilkentride.databinding.ActivityMainBinding;
-import com.alperen.bilkentride.register.EmailGet;
+import com.alperen.bilkentride.register.BirthdayGet;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        Intent intent = new Intent(MainActivity.this, EmailGet.class);
+        Intent intent = new Intent(MainActivity.this, BirthdayGet.class);
         startActivity(intent);
         finish();
 

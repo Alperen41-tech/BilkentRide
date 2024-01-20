@@ -3,6 +3,7 @@ package com.alperen.bilkentride.register;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.alperen.bilkentride.databinding.ActivityEmailGetBinding;
 
@@ -20,4 +21,10 @@ public class EmailGet extends AppCompatActivity {
         setContentView(binding.getRoot());
 
     }
+
+
+    public void deneme(View view){
+        System.out.println("merhaba");
+    }
+
 }
