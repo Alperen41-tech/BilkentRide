@@ -19,10 +19,5 @@ public class EmailGet extends AppCompatActivity {
         binding = ActivityEmailGetBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
-        binding.textView.setText("hello");
-
-
-
     }
 }

@@ -7,7 +7,13 @@
     tools:context=".register.EmailGet">
 
 
-    <LinearLayout style="@style/Regular_LinearLayout_ForTop">
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        style="@style/Regular_LinearLayout_ForTop"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
             style="@style/Regular_Backwards_Arrow"
@@ -18,8 +24,95 @@
             style="@style/Regular_Page_Heading_Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Register"></TextView>
+            android:text="Register Page"></TextView>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        style="@style/Regular_Button_View"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="456dp"
+        android:onClick="confirmButtonClicked"
+        android:text="Confirm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="7dp"
+        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:srcCompat="@drawable/points_1" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:srcCompat="@drawable/at_mark" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="259dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="Enter Your Bilkent Email"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <EditText
+        android:id="@+id/emailnputText"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:ems="10"
+        android:fontFamily="@font/ubuntu_lightitalic"
+        android:hint="name@bilkent.edu.tr"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-83dp"
+        android:layout_marginTop="130dp"
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:srcCompat="@drawable/car_icon" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.994"
+        app:srcCompat="@drawable/animation_pic_1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

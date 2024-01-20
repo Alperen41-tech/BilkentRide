@@ -11,7 +11,7 @@
         <!-- Apply the font family style -->
         <item name="android:fontFamily">@font/ubuntu_bold</item>
         <!-- Define other text attributes as needed -->
-        <item name="android:textSize">27dp</item>
+        <item name="android:textSize">27sp</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:layout_marginVertical">13dp</item>
         <item name="android:layout_marginHorizontal">5dp</item>
@@ -20,7 +20,7 @@
     <style name="Regular_Backwards_Arrow">
         <item name="android:src">@drawable/vector_back</item>
         <item name="android:background">@color/red</item>
-        <item name="android:layout_marginVertical">17dp</item>
+        <item name="android:layout_marginTop">18sp</item>
         <item name="android:layout_marginHorizontal">13dp</item>
     </style>
 
@@ -28,20 +28,15 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">60dp</item>
         <item name="android:background">@color/red</item>
-        <item name="layout_constraintEnd_toEndOf">parent</item>
-        <item name="layout_constraintStart_toStartOf">parent</item>
-        <item name="layout_constraintTop_toTopOf">parent</item>
+
 
 
     </style>
 
-
-
-
     <style name="Regular_Button_View">
         <item name="fontFamily">@font/ubuntu_condensed</item>
         <item name="backgroundTint">@color/red_60</item>
-        <item name="android:textSize">22dp</item>
+        <item name="android:textSize">22sp</item>
     </style>
 
 </resources>
