@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1079057105582",
+    "project_id": "bilkenride-database",
+    "storage_bucket": "bilkenride-database.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1079057105582:android:14626d9837acc796af633f",
+        "android_client_info": {
+          "package_name": "com.alperen.bilkentride"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA14kRnSYkffcXRd6JEhKAHPH2hpKvmfog"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

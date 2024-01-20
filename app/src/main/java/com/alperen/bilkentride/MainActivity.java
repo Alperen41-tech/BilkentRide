@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.alperen.bilkentride.databinding.ActivityMainBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
     }
+
 
 
 
