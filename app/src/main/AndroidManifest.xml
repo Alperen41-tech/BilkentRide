@@ -13,6 +13,18 @@
         android:theme="@style/Theme.BilkentRide"
         tools:targetApi="31">
         <activity
+            android:name=".register.CongratsPage"
+            android:exported="false" />
+        <activity
+            android:name=".register.PasswordGet"
+            android:exported="false" />
+        <activity
+            android:name=".register.RiderityGet"
+            android:exported="false" />
+        <activity
+            android:name=".register.DepartmentGet"
+            android:exported="false" />
+        <activity
             android:name=".register.BirthdayGet"
             android:exported="false" />
         <activity
