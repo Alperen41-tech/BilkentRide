@@ -20,11 +20,29 @@ public class EmailGet extends AppCompatActivity {
         binding = ActivityEmailGetBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
+
+
+
+
     }
 
 
-    public void deneme(View view){
-        System.out.println("merhaba");
+
+
+    public void confirmEmailButtonClicked(View view){
+
     }
+
+    public void goingBack_SignIn(View view){
+
+    }
+
+
+
+
+
+
+
 
 }
