@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.alperen.bilkentride.databinding.ActivityMainBinding;
 import com.alperen.bilkentride.register.BirthdayGet;
+import com.alperen.bilkentride.register.DepartmentGet;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,12 +29,32 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        Intent intent = new Intent(MainActivity.this, BirthdayGet.class);
-        startActivity(intent);
-        finish();
 
 
     }
+
+    public void signInButtonClicked(View view){
+
+
+    }
+
+
+
+    public void signUpTextClicked(View view){
+
+
+    }
+
+    public void forgotPasswordTextClicked(View view){
+
+        System.out.println("hello");
+    }
+
+
+
+
+
+
 
 
 
