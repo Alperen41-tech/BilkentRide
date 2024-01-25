@@ -1,6 +1,4 @@
 package com.alperen.bilkentride.Classes;
 
-public class User
-{
-    
+public class Chat {
 }
