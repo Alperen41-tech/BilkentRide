@@ -8,6 +8,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.View;
 
+import com.alperen.bilkentride.Classes.Ride;
 import com.alperen.bilkentride.Classes.User;
 import com.alperen.bilkentride.Classes.Utilities;
 import com.alperen.bilkentride.R;
@@ -38,6 +39,7 @@ public class RiderityGet extends AppCompatActivity {
 
 
         binding.ifRiderBox.setVisibility(View.INVISIBLE);
+
 
 
         Intent intent = getIntent();
@@ -74,23 +76,14 @@ public class RiderityGet extends AppCompatActivity {
         binding.ifRiderBox.setVisibility(View.VISIBLE);
 
         isSelected = true;
-
         yes = true;
 
-
     }
-
-
-
-
-
-
 
     public void noButtonClicked(View view){
 
         binding.yesButton.setBackground(gradientDrawable_normal);
         binding.noButton.setBackground(gradientDrawable_bold);
-
 
         binding.ifRiderBox.setVisibility(View.INVISIBLE);
 
@@ -106,37 +99,43 @@ public class RiderityGet extends AppCompatActivity {
 
             if (yes){
 
-                if (binding.ifRiderBox.isSelected()){
+                if (binding.ifRiderBox.isChecked()){
+
                     new_user.setRider(true);
-                    Intent intent = new Intent(this, PasswordGet.class);
+                    Intent intent = new Intent(RiderityGet.this, PasswordGet.class);
                     intent.putExtra("current_user", new_user);
                     startActivity(intent);
                     finish();
+
                 }
                 else{
-                    Utilities.showToast(this, "Please confirm you have lisence");
+                    Utilities.showToast(RiderityGet.this, "Please approve you have driver lisence");
                 }
+
+
             }
             else{
                 new_user.setRider(false);
-                Intent intent = new Intent(this, PasswordGet.class);
+                Intent intent = new Intent(RiderityGet.this, PasswordGet.class);
                 intent.putExtra("current_user", new_user);
                 startActivity(intent);
                 finish();
             }
 
+
+
+
         }
         else{
-            Utilities.showToast(this, "You need to select one of those options below");
+            Utilities.showToast(RiderityGet.this, "Select one of the options above");
         }
 
-    }
 
-    public void goingBack_Dep(View view){
 
-        Intent intent = new Intent(this, DepartmentGet.class);
-        startActivity(intent);
-        finish();
+
+
+
+
 
     }
 

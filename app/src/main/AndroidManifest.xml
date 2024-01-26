@@ -16,9 +16,6 @@
             android:name=".AccountSettingsPage"
             android:exported="false" />
         <activity
-            android:name=".register.AccountSettingsPage"
-            android:exported="false" />
-        <activity
             android:name=".FindingRingAndRidePage"
             android:exported="false" />
         <activity

@@ -5,6 +5,9 @@
       <entry key="DepartmentGet">
         <State />
       </entry>
+      <entry key="PasswordGet">
+        <State />
+      </entry>
       <entry key="RiderityGet">
         <State />
       </entry>

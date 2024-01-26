@@ -40,7 +40,7 @@ public class User implements Serializable {
         this.userPhotoUrl = null;
         this.userName = null;
         this.userSurname = null;
-        this.biography = null;
+        this.biography = "";
 
 
 
@@ -229,6 +229,9 @@ public class User implements Serializable {
                  isFemale + "\n" +
                  birthDay + " " + birthMonth + " " + birthYear + "\n" +
                  department + " " + gradYear + "\n" +
-                isRider;
+                isRider +  "\n" +
+                rate + numberOfRate + totalRate + "\n" +
+                conversationsWithId + "\n" +
+                biography;
     }
 }
