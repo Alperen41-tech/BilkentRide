@@ -6,7 +6,17 @@ public class Stops {
     private ArrayList<String> closeBuildingNames;
     private String timeBusComes;
 
-    
+    public Stops() {
+
+        closeBuildingNames = new ArrayList<>();
+        timeBusComes = null;
+    }
+
+    public Stops(ArrayList<String> closeBuildingNames, String timeBusComes) {
+        this.closeBuildingNames = new ArrayList<>();
+        this.timeBusComes = timeBusComes;
+    }
+
     public ArrayList<String> getCloseBuildingNames() {
         return closeBuildingNames;
     }

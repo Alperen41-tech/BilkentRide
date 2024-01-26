@@ -21,6 +21,49 @@ public class User {
     private String userSurname;
     private String biography;
 
+    public User() {
+
+        this.email = null;
+        this.id = null;
+        this.isFemale = false;
+        this.birthDay = -1;
+        this.birthMonth = -1;
+        this.birthYear = -1;
+        this.department = null;
+        this.gradYear = null;
+        this.isRider = false;
+        this.rate = 0;
+        this.numberOfRate = 0;
+        this.totalRate = 0;
+        this.conversationsWithId = new ArrayList<>();
+        this.userPhotoUrl = null;
+        this.userName = null;
+        this.userSurname = null;
+        this.biography = null;
+
+
+
+    }
+
+    public User(String email, String id, boolean isFemale, int birthDay, int birthMonth, int birthYear, String department, String gradYear, boolean isRider, int rate, int numberOfRate, int totalRate, ArrayList<String> conversationsWithId, String userPhotoUrl, String userName, String userSurname, String biography) {
+        this.email = email;
+        this.id = id;
+        this.isFemale = isFemale;
+        this.birthDay = birthDay;
+        this.birthMonth = birthMonth;
+        this.birthYear = birthYear;
+        this.department = department;
+        this.gradYear = gradYear;
+        this.isRider = isRider;
+        this.rate = rate;
+        this.numberOfRate = numberOfRate;
+        this.totalRate = totalRate;
+        this.conversationsWithId = conversationsWithId;
+        this.userPhotoUrl = userPhotoUrl;
+        this.userName = userName;
+        this.userSurname = userSurname;
+        this.biography = biography;
+    }
 
     public String getEmail() {
         return email;

@@ -8,6 +8,23 @@ public class Ride {
     private boolean isApproved;
     private boolean isSelected;
 
+    public Ride() {
+        riderId = null;
+        travellerId = null;
+        whereFrom = null;
+        whereTo = null;
+        isApproved = false;
+        isSelected = false;
+    }
+
+    public Ride(String riderId, String travellerId, String whereFrom, String whereTo, boolean isApproved, boolean isSelected) {
+        this.riderId = riderId;
+        this.travellerId = travellerId;
+        this.whereFrom = whereFrom;
+        this.whereTo = whereTo;
+        this.isApproved = isApproved;
+        this.isSelected = isSelected;
+    }
 
     public String getRideId() {
         return riderId;

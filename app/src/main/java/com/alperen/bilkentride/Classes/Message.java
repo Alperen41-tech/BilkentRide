@@ -6,6 +6,18 @@ public class Message {
     private String text;
 
 
+    public Message() {
+        sentById = null;
+        time = null;
+        text = null;
+    }
+
+    public Message(String sentById, String time, String text) {
+        this.sentById = sentById;
+        this.time = time;
+        this.text = text;
+    }
+
     public String getSentById() {
         return sentById;
     }

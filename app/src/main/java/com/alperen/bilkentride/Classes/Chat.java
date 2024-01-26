@@ -7,6 +7,17 @@ public class Chat {
     private String secondUserId;
     private ArrayList<Message> messagesOnThisChat;
 
+    public Chat() {
+        firstUserId = null;
+        secondUserId = null;
+        messagesOnThisChat = new ArrayList<>();
+    }
+
+    public Chat(String firstUserId, String secondUserId, ArrayList<Message> messagesOnThisChat) {
+        this.firstUserId = firstUserId;
+        this.secondUserId = secondUserId;
+        this.messagesOnThisChat = messagesOnThisChat;
+    }
 
     public String getFirstUserId() {
         return firstUserId;
