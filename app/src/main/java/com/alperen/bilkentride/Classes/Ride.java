@@ -1,7 +1,7 @@
 package com.alperen.bilkentride.Classes;
 
 public class Ride {
-    private String rideId;
+    private String riderId;
     private String travellerId;
     private String whereFrom;
     private String whereTo;
@@ -10,11 +10,11 @@ public class Ride {
 
 
     public String getRideId() {
-        return rideId;
+        return riderId;
     }
 
-    public void setRideId(String rideId) {
-        this.rideId = rideId;
+    public void setRideId(String riderId) {
+        this.riderId = riderId;
     }
 
     public String getTravellerId() {

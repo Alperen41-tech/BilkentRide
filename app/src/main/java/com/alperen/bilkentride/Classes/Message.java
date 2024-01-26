@@ -1,6 +1,6 @@
 package com.alperen.bilkentride.Classes;
 
-public class Messages {
+public class Message {
     private String sentById;
     private String time;
     private String text;

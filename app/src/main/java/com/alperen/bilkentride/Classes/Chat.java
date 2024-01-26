@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Chat {
     private String firstUserId;
     private String secondUserId;
-    private ArrayList<Messages> messagesOnThisChat;
+    private ArrayList<Message> messagesOnThisChat;
 
 
     public String getFirstUserId() {
@@ -24,11 +24,11 @@ public class Chat {
         this.secondUserId = secondUserId;
     }
 
-    public ArrayList<Messages> getMessagesOnThisChat() {
+    public ArrayList<Message> getMessagesOnThisChat() {
         return messagesOnThisChat;
     }
 
-    public void setMessagesOnThisChat(ArrayList<Messages> messagesOnThisChat) {
+    public void setMessagesOnThisChat(ArrayList<Message> messagesOnThisChat) {
         this.messagesOnThisChat = messagesOnThisChat;
     }
 }
