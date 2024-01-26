@@ -9,6 +9,7 @@ import android.view.View;
 import com.alperen.bilkentride.databinding.ActivityMainBinding;
 import com.alperen.bilkentride.register.BirthdayGet;
 import com.alperen.bilkentride.register.DepartmentGet;
+import com.alperen.bilkentride.register.EmailGet;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void signUpTextClicked(View view){
 
+        Intent intent = new Intent(this, EmailGet.class);
+        startActivity(intent);
 
     }
 

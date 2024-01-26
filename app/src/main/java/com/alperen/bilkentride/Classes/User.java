@@ -1,8 +1,9 @@
 package com.alperen.bilkentride.Classes;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class User {
+public class User implements Serializable {
     private String email;
     private String id;
     private boolean isFemale;
@@ -199,5 +200,12 @@ public class User {
 
     public void setBiography(String biography) {
         this.biography = biography;
+    }
+
+    @Override
+    public String toString(){
+        return  this.userName + " " + this.userSurname + "\n" +
+                 isFemale + "\n" +
+                 birthDay + " " + birthMonth + " " + birthYear;
     }
 }
