@@ -2,6 +2,12 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="DepartmentGet">
+        <State />
+      </entry>
+      <entry key="RiderityGet">
+        <State />
+      </entry>
       <entry key="app">
         <State />
       </entry>
