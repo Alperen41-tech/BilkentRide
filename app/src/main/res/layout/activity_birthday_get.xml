@@ -85,13 +85,14 @@
         android:id="@+id/birthdayCar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
-        app:layout_constraintStart_toStartOf="@+id/birth"
-        app:layout_constraintTop_toBottomOf="@+id/birth"
+        android:layout_marginStart="130dp"
+        android:layout_marginBottom="-8dp"
+        app:layout_constraintBottom_toTopOf="@+id/birthdayGround"
+        app:layout_constraintStart_toStartOf="@+id/birthdayGround"
         app:srcCompat="@drawable/car_icon" />
 
     <ImageView
-        android:id="@+id/ground"
+        android:id="@+id/birthdayGround"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

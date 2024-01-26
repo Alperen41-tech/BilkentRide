@@ -40,6 +40,8 @@ public class PasswordGet extends AppCompatActivity {
         binding = ActivityPasswordGetBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        Utilities.animate_car(this, binding.passwordGround);
+
         Intent intent = getIntent();
 
         current_user = (User) intent.getSerializableExtra("current_user");

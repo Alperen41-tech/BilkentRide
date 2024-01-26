@@ -4,13 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.alperen.bilkentride.Classes.User;
 import com.alperen.bilkentride.Classes.Utilities;
 import com.alperen.bilkentride.MainActivity;
+import com.alperen.bilkentride.R;
 import com.alperen.bilkentride.databinding.ActivityEmailGetBinding;
+
+import java.util.ArrayList;
 
 public class EmailGet extends AppCompatActivity {
 
@@ -26,12 +32,13 @@ public class EmailGet extends AppCompatActivity {
         setContentView(binding.getRoot());
 
 
-
-
-
+        Utilities.animate_car(this, binding.emailGround);
 
 
     }
+
+
+
 
 
 

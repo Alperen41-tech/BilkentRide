@@ -2,33 +2,8 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-<<<<<<< Updated upstream
-      <entry key="DepartmentGet">
-        <State />
-      </entry>
-      <entry key="PasswordGet">
-        <State />
-      </entry>
-      <entry key="RiderityGet">
-        <State />
-      </entry>
-=======
->>>>>>> Stashed changes
       <entry key="app">
-        <State>
-          <targetSelectedWithDropDown>
-            <Target>
-              <type value="QUICK_BOOT_TARGET" />
-              <deviceKey>
-                <Key>
-                  <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="C:\Users\YOGA\.android\avd\Pixel_3a_XL_API_28.avd" />
-                </Key>
-              </deviceKey>
-            </Target>
-          </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-01-26T18:14:19.166711700Z" />
-        </State>
+        <State />
       </entry>
     </value>
   </component>

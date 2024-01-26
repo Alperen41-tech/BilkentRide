@@ -37,6 +37,10 @@ public class BirthdayGet extends AppCompatActivity {
         binding = ActivityBirthdayGetBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
+        Utilities.animate_car(this, binding.birthdayGround);
+
+
         new_user = new User();
 
 

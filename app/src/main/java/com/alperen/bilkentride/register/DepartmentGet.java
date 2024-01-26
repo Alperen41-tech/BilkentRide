@@ -31,6 +31,8 @@ public class DepartmentGet extends AppCompatActivity {
         binding = ActivityDepartmentGetBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        Utilities.animate_car(this, binding.depGround);
+
 
         Intent intent = getIntent();
 

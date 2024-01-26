@@ -33,6 +33,9 @@ public class GenderGet extends AppCompatActivity {
         binding = ActivityGenderGetBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
+        Utilities.animate_car(this, binding.genderGround);
+
         isClicked = false;
 
         Intent intent = getIntent();

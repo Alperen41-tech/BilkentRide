@@ -38,6 +38,8 @@ public class RiderityGet extends AppCompatActivity {
         setContentView(binding.getRoot());
 
 
+        Utilities.animate_car(this, binding.rideGround);
+
         binding.ifRiderBox.setVisibility(View.INVISIBLE);
 
 

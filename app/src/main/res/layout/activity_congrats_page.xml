@@ -64,7 +64,8 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
-        android:id="@+id/button_123"
+
+        android:id="@+id/congratsButton"
         style="@style/Regular_Button_View"
         android:layout_width="242dp"
         android:layout_height="55dp"
@@ -80,21 +81,20 @@
         android:id="@+id/rocket"
         android:layout_width="48dp"
         android:layout_height="65dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="100dp"
-        app:layout_constraintStart_toStartOf="@+id/button_123"
-        app:layout_constraintTop_toBottomOf="@+id/button_123"
+        app:layout_constraintBottom_toTopOf="@+id/congratsGround"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/rocket_icon" />
 
     <ImageView
-        android:id="@+id/ground_new"
+        android:id="@+id/congratsGround"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_123"
+
         app:layout_constraintVertical_bias="0.994"
         app:srcCompat="@drawable/animation_pic_1" />
 
