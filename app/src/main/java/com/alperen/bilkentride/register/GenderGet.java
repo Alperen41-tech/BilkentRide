@@ -46,7 +46,7 @@ public class GenderGet extends AppCompatActivity {
         gradientDrawable_bold.setShape(GradientDrawable.RECTANGLE);
         gradientDrawable_bold.setColor(Color.WHITE); // Set the background color (in this case, red)
         gradientDrawable_bold.setCornerRadius(30);
-        gradientDrawable_bold.setStroke(8, Color.parseColor("#99DC2323")); // Set the border size (2px) and color (black)
+        gradientDrawable_bold.setStroke(10, Color.parseColor("#99DC2323")); // Set the border size (2px) and color (black)
 
 
         gradientDrawable_normal = new GradientDrawable();

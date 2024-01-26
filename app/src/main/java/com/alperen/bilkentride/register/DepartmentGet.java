@@ -47,9 +47,17 @@ public class DepartmentGet extends AppCompatActivity {
         }
         years.add("G");
 
+        String[] elements = getResources().getStringArray(R.array.spinner_elements);
+
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, years);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this, R.layout.custom_spinner_element, elements);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+
+
 
 
         Spinner spinner = binding.yearList;
@@ -68,6 +76,22 @@ public class DepartmentGet extends AppCompatActivity {
             }
         });
 
+        Spinner spinner_dep = binding.departmentList;
+        spinner_dep.setAdapter(adapter1);
+
+        spinner_dep.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem = parent.getItemAtPosition(position).toString();
+                new_user.setDepartment(selectedItem);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                Utilities.showToast(DepartmentGet.this, "Please select your year at university");
+            }
+        });
+
 
 
     }
@@ -77,7 +101,10 @@ public class DepartmentGet extends AppCompatActivity {
 
     public void confirmDepButtonClicked(View view){
 
-
+        Intent intent = new Intent(DepartmentGet.this, RiderityGet.class);
+        intent.putExtra("current_user", new_user);
+        startActivity(intent);
+        finish();
 
     }
 

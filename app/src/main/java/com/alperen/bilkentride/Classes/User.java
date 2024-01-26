@@ -227,6 +227,8 @@ public class User implements Serializable {
     public String toString(){
         return  this.userName + " " + this.userSurname + "\n" +
                  isFemale + "\n" +
-                 birthDay + " " + birthMonth + " " + birthYear;
+                 birthDay + " " + birthMonth + " " + birthYear + "\n" +
+                 department + " " + gradYear + "\n" +
+                isRider;
     }
 }

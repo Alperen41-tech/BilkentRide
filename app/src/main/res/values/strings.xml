@@ -1,3 +1,49 @@
 <resources>
     <string name="app_name">BilkentRide</string>
+
+
+    <string-array name="spinner_elements">
+        <item>Information Systems and Technologies</item>
+        <item>Tourism and Hotel Management</item>
+        <item>Architecture</item>
+        <item>Communication and Design</item>
+        <item>Fine Arts</item>
+        <item>Graphic Design</item>
+        <item>Interior Architecture and Environmental Design</item>
+        <item>Urban Design and Landscape Architecture</item>
+        <item>Management</item>
+        <item>Economics</item>
+        <item>History</item>
+        <item>International Relations</item>
+        <item>Political Science and Public Administration</item>
+        <item>Psychology</item>
+        <item>Curriculum and Instruction</item>
+        <item>English Language Teaching</item>
+        <item>Computer Engineering</item>
+        <item>Electrical and Electronics Engineering</item>
+        <item>Industrial Engineering</item>
+        <item>Mechanical Engineering</item>
+        <item>American Culture and Literature</item>
+        <item>Archaeology</item>
+        <item>English Language and Literature</item>
+        <item>Philosophy</item>
+        <item>Translation and Interpretation</item>
+        <item>Turkish Literature</item>
+        <item>Law</item>
+        <item>Music</item>
+        <item>Performing Arts</item>
+        <item>Chemistry</item>
+        <item>Mathematics</item>
+        <item>Molecular Biology and Genetics</item>
+        <item>Physics</item>
+        <item>Interdisciplinary Programs</item>
+        <item>Materials Science and Nanotechnology</item>
+        <item>Neuroscience</item>
+        <item>General Courses</item>
+        <item>School of Applied Technology and Management</item>
+        <item>Business Information Management</item>
+        <item>Information Systems and Technologies</item>
+        <item>Tourism and Hotel Management</item>
+    </string-array>
+
 </resources>

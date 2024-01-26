@@ -118,37 +118,36 @@
         android:id="@+id/ifRiderBox"
         android:layout_width="182dp"
         android:layout_height="32dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="132dp"
         android:text="I have a driver lisence"
         app:layout_constraintEnd_toEndOf="@+id/textView3"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <ImageButton
-        android:id="@+id/yesButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="68dp"
-        android:background="@color/white"
-        android:onClick="yesButtonClicked"
-        app:layout_constraintEnd_toStartOf="@+id/noButton"
-        app:layout_constraintHorizontal_bias="0.955"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/noButton"
-        app:srcCompat="@drawable/yes_button" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3"/>
 
     <ImageButton
         android:id="@+id/noButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="92dp"
+        android:layout_marginTop="76dp"
         android:background="@color/white"
         android:onClick="noButtonClicked"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ifRiderBox"
+        app:layout_constraintHorizontal_bias="0.721"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:srcCompat="@drawable/no_button" />
+
+    <ImageButton
+        android:id="@+id/yesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        android:background="@color/white"
+        android:onClick="yesButtonClicked"
+        app:layout_constraintEnd_toStartOf="@+id/noButton"
+        app:layout_constraintTop_toTopOf="@+id/noButton"
+        app:srcCompat="@drawable/yes_button" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

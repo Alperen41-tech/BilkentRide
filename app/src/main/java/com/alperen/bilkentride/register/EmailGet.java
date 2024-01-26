@@ -43,7 +43,7 @@ public class EmailGet extends AppCompatActivity {
 
 
         if (name.isEmpty() || surname.isEmpty()){
-            Utilities.showToast(this, "Any of those area cannot be blank");
+            Utilities.showToast(this, "None of those area can be blank");
         }
 
         else{
@@ -51,8 +51,8 @@ public class EmailGet extends AppCompatActivity {
             name.trim();
             surname.trim();
 
-            name = name.substring(0,1).toUpperCase() + name.substring(1);
-            surname = surname.substring(0,1).toUpperCase() + surname.substring(1);
+            name = name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();
+            surname = surname.substring(0,1).toUpperCase() + surname.substring(1).toLowerCase();
 
 
             User user = new User();
