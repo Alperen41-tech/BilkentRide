@@ -13,6 +13,12 @@
         android:theme="@style/Theme.BilkentRide"
         tools:targetApi="31">
         <activity
+            android:name=".AccountSettingsPage"
+            android:exported="false" />
+        <activity
+            android:name=".register.AccountSettingsPage"
+            android:exported="false" />
+        <activity
             android:name=".FindingRingAndRidePage"
             android:exported="false" />
         <activity
