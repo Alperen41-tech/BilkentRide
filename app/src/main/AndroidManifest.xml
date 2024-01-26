@@ -13,6 +13,9 @@
         android:theme="@style/Theme.BilkentRide"
         tools:targetApi="31">
         <activity
+            android:name=".EditProfilePage"
+            android:exported="false" />
+        <activity
             android:name=".AccountSettingsPage"
             android:exported="false" />
         <activity
