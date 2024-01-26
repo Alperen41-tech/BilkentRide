@@ -202,6 +202,27 @@ public class User implements Serializable {
         this.biography = biography;
     }
 
+
+
+    public void setNewUser(User new_user){
+        this.email = new_user.getEmail();
+        this.id = new_user.getId();
+        this.isFemale = new_user.isFemale();
+        this.birthDay = new_user.getBirthDay();
+        this.birthMonth = new_user.getBirthMonth();
+        this.birthYear = new_user.getBirthYear();
+        this.department = new_user.getDepartment();
+        this.gradYear = new_user.getGradYear();
+        this.isRider = new_user.isRider();
+        this.rate = new_user.getRate();
+        this.numberOfRate = new_user.getNumberOfRate();
+        this.totalRate = new_user.getTotalRate();
+        this.userPhotoUrl = new_user.getUserPhotoUrl();
+        this.userName = new_user.getUserName();
+        this.userSurname = new_user.getUserSurname();
+        this.biography = new_user.getBiography();
+    }
+
     @Override
     public String toString(){
         return  this.userName + " " + this.userSurname + "\n" +

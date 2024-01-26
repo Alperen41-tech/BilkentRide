@@ -24,6 +24,7 @@ public class BirthdayGet extends AppCompatActivity {
 
 
     private User current_user;
+    private User new_user;
 
     private int curr_day;
     private int curr_month;
@@ -36,13 +37,16 @@ public class BirthdayGet extends AppCompatActivity {
         binding = ActivityBirthdayGetBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        new_user = new User();
+
+
         curr_year = 0;
         curr_day = 0;
         curr_month = 0;
 
         Intent intent = getIntent();
         current_user = (User) intent.getSerializableExtra("current_user");
-
+        new_user.setNewUser(current_user);
 
         TextView birth = binding.birthDayText;
 
@@ -69,12 +73,12 @@ public class BirthdayGet extends AppCompatActivity {
 
         else{
 
-            current_user.setBirthDay(curr_day);
-            current_user.setBirthMonth(curr_month);
-            current_user.setBirthYear(curr_year);
+            new_user.setBirthDay(curr_day);
+            new_user.setBirthMonth(curr_month);
+            new_user.setBirthYear(curr_year);
 
             Intent intent = new Intent(this, DepartmentGet.class);
-            intent.putExtra("current_user", current_user);
+            intent.putExtra("current_user", new_user);
             startActivity(intent);
             finish();
         }
@@ -110,7 +114,7 @@ public class BirthdayGet extends AppCompatActivity {
                 Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
         );
         // Set the maximum date to the current date minus 18 years
-        datePickerDialog.getDatePicker().setMaxDate(Calendar.getInstance().getTimeInMillis() - 568025136000L);
+        datePickerDialog.getDatePicker().setMaxDate(Calendar.getInstance().getTimeInMillis());
         datePickerDialog.show();
     }
 

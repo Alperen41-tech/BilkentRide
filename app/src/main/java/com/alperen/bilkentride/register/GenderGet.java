@@ -19,6 +19,7 @@ public class GenderGet extends AppCompatActivity {
 
     private ActivityGenderGetBinding binding;
     private User current_user;
+    private User new_user;
 
     private boolean isClicked;
 
@@ -37,6 +38,10 @@ public class GenderGet extends AppCompatActivity {
         Intent intent = getIntent();
         current_user = (User) intent.getSerializableExtra("current_user");
 
+        new_user = new User();
+        new_user.setNewUser(current_user);
+
+
         gradientDrawable_bold = new GradientDrawable();
         gradientDrawable_bold.setShape(GradientDrawable.RECTANGLE);
         gradientDrawable_bold.setColor(Color.WHITE); // Set the background color (in this case, red)
@@ -54,7 +59,7 @@ public class GenderGet extends AppCompatActivity {
 
 
     public void female_ButtonClicked(View view){
-        current_user.setFemale(true);
+        new_user.setFemale(true);
         if (!isClicked){isClicked = true;}
 
         binding.maleButton.setBackground(gradientDrawable_normal);
@@ -64,7 +69,7 @@ public class GenderGet extends AppCompatActivity {
     }
 
     public void male_ButtonClicked(View view){
-        current_user.setFemale(false);
+        new_user.setFemale(false);
         if (!isClicked){isClicked = true;}
 
         binding.maleButton.setBackground(gradientDrawable_bold);
@@ -75,15 +80,12 @@ public class GenderGet extends AppCompatActivity {
     public void confirmGenderButtonClicked(View view){
 
         if (isClicked){
-
             Intent intent = new Intent(this, BirthdayGet.class);
-            intent.putExtra("current_user", current_user);
+            intent.putExtra("current_user", new_user);
             startActivity(intent);
-            finish();
-
         }
         else{
-            Utilities.showToast(this,"Please select one of options");
+            Utilities.showToast(this,"Please select one of the options above");
         }
 
 

@@ -39,11 +39,21 @@ public class EmailGet extends AppCompatActivity {
         String name = binding.nameInputText.getText().toString();
         String surname = binding.surnameInputText.getText().toString();
 
+
+
+
         if (name.isEmpty() || surname.isEmpty()){
             Utilities.showToast(this, "Any of those area cannot be blank");
         }
 
         else{
+
+            name.trim();
+            surname.trim();
+
+            name = name.substring(0,1).toUpperCase() + name.substring(1);
+            surname = surname.substring(0,1).toUpperCase() + surname.substring(1);
+
 
             User user = new User();
             user.setUserName(name);
