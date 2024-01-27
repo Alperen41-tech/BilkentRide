@@ -4,18 +4,21 @@ public class Message {
     private String sentById;
     private String time;
     private String text;
+    private boolean isMine;
 
 
     public Message() {
         sentById = null;
         time = null;
         text = null;
+        isMine = false;
     }
 
-    public Message(String sentById, String time, String text) {
+    public Message(String sentById, String time, String text, boolean isMine) {
         this.sentById = sentById;
         this.time = time;
         this.text = text;
+        this.isMine = isMine;
     }
 
     public String getSentById() {
@@ -40,5 +43,13 @@ public class Message {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public boolean isMine() {
+        return isMine;
+    }
+
+    public void setMine(boolean mine) {
+        isMine = mine;
     }
 }
