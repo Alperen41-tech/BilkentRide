@@ -4,20 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class SecurityPage extends AppCompatActivity {
+public class ChatsPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_security_page);
+        setContentView(R.layout.activity_chats_page);
     }
 
-    public void backButtonClicked()
-    {
-
-    }
-
-    public void saveNewPasswordButtonClicked()
+    public void crossButtonClicked()
     {
 
     }
