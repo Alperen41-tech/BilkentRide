@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DialogPage">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        style="@style/Regular_LinearLayout_ForTop"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/goingBack_chatsPage"
+            style="@style/Regular_Backwards_Arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="11dp"
+            android:onClick="backButtonClicked"></ImageButton>
+
+        <TextView
+            android:id="@+id/hostNameText"
+            style="@style/Regular_Page_Heading_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alperen Karslıoğlu :)"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        style="@style/Regular_LinearLayout_ForTop"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/chatButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="69dp"
+            android:layout_marginRight="50dp"
+            android:background="#00FFFFFF"
+            android:onClick="chatButtonClicked"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/chat_button" />
+
+        <ImageButton
+            android:id="@+id/mainPageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="#00FFFFFF"
+            android:onClick="mainPageButtonClicked"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/main_page_button" />
+
+        <ImageButton
+            android:id="@+id/profileButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="#00FFFFFF"
+            android:onClick="profileButtonClicked"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageButton2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/profile_button" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/messageEditText"
+        android:layout_width="319dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/rounded_rectangle_black_shape_xml"
+        android:ems="10"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="Write your message ..."
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.282"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/sendMessageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:onClick="sendMessageButtonClicked"
+        app:layout_constraintBottom_toBottomOf="@+id/messageEditText"
+        app:layout_constraintStart_toEndOf="@+id/messageEditText"
+        app:layout_constraintTop_toTopOf="@+id/messageEditText"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/send_message_button" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        tools:layout_editor_absoluteX="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
