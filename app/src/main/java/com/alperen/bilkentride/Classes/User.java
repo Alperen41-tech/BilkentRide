@@ -2,6 +2,9 @@ package com.alperen.bilkentride.Classes;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 public class User implements Serializable {
     private String email;
@@ -222,6 +225,34 @@ public class User implements Serializable {
         this.userSurname = new_user.getUserSurname();
         this.biography = new_user.getBiography();
     }
+
+    public Map<String, Object> dataOfUser() {
+        Map<String, Object> variableMap = new HashMap<>();
+
+        variableMap.put("email", this.email);
+        variableMap.put("id", this.id);
+        variableMap.put("isFemale", this.isFemale);
+        variableMap.put("birthDay", this.birthDay);
+        variableMap.put("birthMonth", this.birthMonth);
+        variableMap.put("birthYear", this.birthYear);
+        variableMap.put("department", this.department);
+        variableMap.put("gradYear", this.gradYear);
+        variableMap.put("isRider", this.isRider);
+        variableMap.put("rate", this.rate);
+        variableMap.put("numberOfRate", this.numberOfRate);
+        variableMap.put("totalRate", this.totalRate);
+        variableMap.put("conversationsWithId", this.conversationsWithId);
+        variableMap.put("userPhotoUrl", this.userPhotoUrl);
+        variableMap.put("userName", this.userName);
+        variableMap.put("userSurname", this.userSurname);
+        variableMap.put("biography", this.biography);
+
+        return variableMap;
+    }
+
+
+
+
 
     @Override
     public String toString(){
