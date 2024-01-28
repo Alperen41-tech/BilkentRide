@@ -25,9 +25,9 @@
 
 
     <TextView
-        android:id="@+id/textView6"
-        android:layout_width="140dp"
-        android:layout_height="53dp"
+        android:id="@+id/nameSurname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/ubuntu_bold"
         android:text="Name \nSurname"
         android:textAlignment="center"
@@ -40,7 +40,7 @@
         app:layout_constraintVertical_bias="0.158" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/biography"
         android:layout_width="297dp"
         android:layout_height="94dp"
         android:fontFamily="serif"
@@ -75,7 +75,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
-            android:id="@+id/chatButton"
+            android:id="@+id/chatButton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="67dp"
@@ -88,7 +88,7 @@
             app:srcCompat="@drawable/chat_button" />
 
         <ImageButton
-            android:id="@+id/mainPageButton"
+            android:id="@+id/mainPageButton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
@@ -102,7 +102,7 @@
             app:srcCompat="@drawable/main_page_button" />
 
         <ImageButton
-            android:id="@+id/profileButton"
+            android:id="@+id/profileButton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
@@ -156,7 +156,7 @@
         app:srcCompat="@drawable/log_out_button" />
 
     <ImageView
-        android:id="@+id/imageView15"
+        android:id="@+id/userPhoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -168,18 +168,19 @@
         app:srcCompat="@drawable/profile_photo_image" />
 
     <TextView
-        android:id="@+id/textView12"
-        android:textColor="@color/black_60"
+        android:id="@+id/email_show"
         android:layout_width="match_parent"
         android:layout_height="28dp"
         android:fontFamily="@font/ubuntu_bold"
         android:text="name.surname@ug.bilkent.edu.tr"
         android:textAlignment="center"
+        android:textColor="@color/black_60"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.48000002"
-        tools:layout_editor_absoluteX="57dp" />
+        app:layout_constraintVertical_bias="0.48000002" />
 
     <ImageView
         android:id="@+id/editProfileButton"
@@ -187,9 +188,9 @@
         android:layout_height="wrap_content"
         android:onClick="editProfileButtonClicked"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textView12"
+        app:layout_constraintEnd_toEndOf="@+id/email_show"
         app:layout_constraintHorizontal_bias="0.249"
-        app:layout_constraintStart_toStartOf="@+id/textView12"
+        app:layout_constraintStart_toStartOf="@+id/email_show"
         app:layout_constraintTop_toTopOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.648"
         app:srcCompat="@drawable/edit_profile_button" />

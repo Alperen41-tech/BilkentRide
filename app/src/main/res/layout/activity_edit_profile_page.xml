@@ -181,7 +181,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
-            android:id="@+id/chatButton"
+            android:id="@+id/chatButton4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="69dp"
@@ -194,7 +194,7 @@
             app:srcCompat="@drawable/chat_button" />
 
         <ImageButton
-            android:id="@+id/mainPageButton"
+            android:id="@+id/mainPageButton4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
@@ -208,7 +208,7 @@
             app:srcCompat="@drawable/main_page_button" />
 
         <ImageButton
-            android:id="@+id/profileButton"
+            android:id="@+id/profileButton4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"

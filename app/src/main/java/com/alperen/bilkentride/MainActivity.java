@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        Utilities.animate_car(this, binding.mainGround);
+        //Utilities.animate_car(this, binding.mainGround);
 
         my_auth = FirebaseAuth.getInstance();
 
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        if (user != null && remembered){
+        if (remembered && user != null){
             System.out.println("Buraddaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
             Intent intent = new Intent(MainActivity.this, FindingRingAndRidePage.class);
             startActivity(intent);
@@ -102,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, EmailGet.class);
         startActivity(intent);
+        finish();
 
     }
 

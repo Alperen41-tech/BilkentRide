@@ -86,6 +86,7 @@ public class GenderGet extends AppCompatActivity {
             Intent intent = new Intent(this, BirthdayGet.class);
             intent.putExtra("current_user", new_user);
             startActivity(intent);
+            finish();
         }
         else{
             Utilities.showToast(this,"Please select one of the options above");

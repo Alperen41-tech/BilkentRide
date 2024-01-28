@@ -52,7 +52,7 @@
         android:onClick="makeRideButtonClicked"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tellMeRingOptionButton"
+        app:layout_constraintTop_toBottomOf="@+id/rinButton"
         app:srcCompat="@drawable/lets_make_a_ride_button"></ImageButton>
 
     <ImageButton
@@ -69,7 +69,7 @@
         app:srcCompat="@drawable/find_me_a_ride_button"></ImageButton>
 
     <ImageButton
-        android:id="@+id/tellMeRingOptionButton"
+        android:id="@+id/rinButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00FFFFFF"
@@ -94,20 +94,20 @@
 
 
         <ImageButton
-            android:id="@+id/chatButton"
+            android:id="@+id/chatButton5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="69dp"
             android:layout_marginRight="50dp"
             android:background="#00FFFFFF"
-            android:onClick="chatButtonClicked"
+            android:onClick="chatButton1Clicked"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/imageButton2"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/chat_button" />
 
         <ImageButton
-            android:id="@+id/mainPageButton"
+            android:id="@+id/mainPageButton5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
@@ -120,18 +120,18 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/main_page_button" />
 
-        <ImageButton
-            android:id="@+id/profileButton"
+
+        <ImageView
+            android:id="@+id/profileButton5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#00FFFFFF"
-            android:layout_marginRight="50dp"
             android:layout_marginLeft="50dp"
-            android:onClick="profileButtonClicked"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageButton2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/profile_button" />
+            android:layout_marginRight="50dp"
+            android:background="#00FFFFFF"
+            android:onClick="profileButton5Clicked"
+            app:srcCompat="@drawable/profile_button"></ImageView>
+
+
     </LinearLayout>
 
 
