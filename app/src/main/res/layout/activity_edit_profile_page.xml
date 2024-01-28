@@ -229,6 +229,7 @@
         android:onClick="saveChangesButtonClicked"
         android:text="Save Changes"
         android:textSize="22sp"
+        style="@style/Regular_Button_View_yellow"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

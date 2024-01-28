@@ -39,5 +39,11 @@
         <item name="android:textSize">22sp</item>
     </style>
 
+    <style name="Regular_Button_View_yellow">
+        <item name="fontFamily">@font/ubuntu_condensed</item>
+        <item name="backgroundTint">@color/yellow</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
 
 </resources>

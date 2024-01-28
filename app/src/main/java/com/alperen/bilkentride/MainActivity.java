@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        //Utilities.animate_car(this, binding.mainGround);
+        Utilities.animate_car(this, binding.mainGround);
 
         my_auth = FirebaseAuth.getInstance();
 
@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+
+
 
     }
 

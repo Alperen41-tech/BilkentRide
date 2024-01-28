@@ -152,7 +152,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.811"
-        app:strokeColor="#A53131" />
+        app:strokeColor="#A53131"
+        style="@style/Regular_Button_View_yellow"/>
 
     <TextView
         android:id="@+id/textView17"
