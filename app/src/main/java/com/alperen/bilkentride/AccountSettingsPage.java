@@ -2,6 +2,7 @@ package com.alperen.bilkentride;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -35,7 +36,7 @@ public class AccountSettingsPage extends AppCompatActivity {
             @Override
             public void onGet(User user) {
                 binding.nameSurname.setText(user.getUserName() + "\n" + user.getUserSurname());
-                binding.biography.setText(user.getBiography());
+                binding.biography.setText(user.getDepartment() + "\n" + user.getBiography());
                 binding.emailShow.setText(user.getEmail());
 
                 Picasso.get().load(user.getUserPhotoUrl()).into(binding.userPhoto);
@@ -61,21 +62,33 @@ public class AccountSettingsPage extends AppCompatActivity {
 
     public void logOutButtonClicked()
     {
+        if (my_auth.getCurrentUser() != null){
+            my_auth.signOut();
+        }
 
+        Intent intent = new Intent(AccountSettingsPage.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+        Utilities.showToast(this,"Signed Out");
     }
 
     public void chatButtonClicked()
     {
-
+        Intent intent = new Intent(this, ChatsPage.class);
+        startActivity(intent);
+        finish();
     }
 
     public void mainPageButtonClicked()
     {
-
+        Intent intent = new Intent(this, FindingRingAndRidePage.class);
+        startActivity(intent);
+        finish();
     }
 
     public void profileButtonClicked()
     {
+
 
     }
 }
