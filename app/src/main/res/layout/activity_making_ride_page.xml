@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#00FFFFFF"
+    tools:context=".MakingRidePage">
+
+    <EditText
+        android:id="@+id/whereToEditText"
+        android:layout_width="282dp"
+        android:layout_height="40dp"
+        android:background="@drawable/rectange_red_shape"
+        android:ems="10"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="Choose the Arrival Point"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        android:textColor="@color/gray"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.449" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="36dp"
+        android:onClick="locationButtonClicked"
+        app:layout_constraintBottom_toBottomOf="@+id/whereToEditText"
+        app:layout_constraintEnd_toEndOf="@+id/whereToEditText"
+        app:layout_constraintTop_toBottomOf="@+id/whereToText"
+        app:layout_constraintVertical_bias="0.68"
+        app:srcCompat="@drawable/location_symbol" />
+
+    <TextView
+        android:id="@+id/whereToText"
+        android:layout_width="219dp"
+        android:layout_height="22dp"
+        android:background="@drawable/rounded_rectangle_red_text_view_2"
+        android:fontFamily="@font/ubuntu_bold"
+        android:gravity="center"
+        android:text="Where To"
+        android:textColor="#FFFFFF"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toTopOf="@+id/whereToEditText"
+        app:layout_constraintEnd_toEndOf="@+id/whereToEditText"
+        app:layout_constraintStart_toStartOf="@+id/whereToEditText"
+        app:layout_constraintTop_toBottomOf="@+id/whereFromEditText"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/whereFromEditText"
+        android:layout_width="282dp"
+        android:layout_height="40dp"
+        android:background="@drawable/rectange_red_shape"
+        android:ems="10"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="Choose the Begining Point"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        android:textColor="@color/gray"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.271" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="188dp"
+        android:layout_height="47dp"
+        android:fontFamily="@font/ubuntu_bolditalic"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/letsFindTraveller"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.607"
+        tools:text="Don’t know which building?\nSelect the points using Map" />
+
+    <ImageView
+        android:id="@+id/mapButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="mapButtonClicked"
+        app:layout_constraintBottom_toBottomOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="@+id/letsFindTraveller"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toTopOf="@+id/textView6"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/map_symbol" />
+
+    <Button
+        android:id="@+id/letsFindTraveller"
+        style="@style/Rounded_Button_View_red"
+        android:layout_width="246dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="168dp"
+        android:onClick="letsFindTravellerButtonClicked"
+        android:text="Let's find a traveller!"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/whereFromText"
+        android:layout_width="219dp"
+        android:layout_height="22dp"
+        android:background="@drawable/rounded_rectangle_red_text_view_2"
+        android:fontFamily="@font/ubuntu_bold"
+        android:gravity="center"
+        android:text="Where From"
+        android:textColor="#FFFFFF"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toTopOf="@+id/whereFromEditText"
+        app:layout_constraintEnd_toEndOf="@+id/whereFromEditText"
+        app:layout_constraintStart_toStartOf="@+id/whereFromEditText"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:onClick="locationButtonClicked"
+        app:layout_constraintBottom_toBottomOf="@+id/whereFromEditText"
+        app:layout_constraintEnd_toEndOf="@+id/whereFromEditText"
+        app:layout_constraintTop_toBottomOf="@+id/whereFromText"
+        app:layout_constraintVertical_bias="0.812"
+        app:srcCompat="@drawable/location_symbol" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        style="@style/Regular_LinearLayout_ForTop"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/goingBackMainPageFromMakingRide"
+            style="@style/Regular_Backwards_Arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="goingBack_MainPage"></ImageButton>
+
+        <TextView
+            android:id="@+id/RideText"
+            style="@style/Regular_Page_Heading_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Make a Ride"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        style="@style/Regular_LinearLayout_ForTop"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/chatButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="67dp"
+            android:layout_marginRight="50dp"
+            android:background="#00FFFFFF"
+            android:onClick="chatButtonClicked"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/chat_button" />
+
+        <ImageButton
+            android:id="@+id/mainPageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="#00FFFFFF"
+            android:onClick="mainPageButtonClicked"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/main_page_button" />
+
+        <ImageButton
+            android:id="@+id/profileButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="#00FFFFFF"
+            android:onClick="profileButtonClicked"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageButton2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/profile_button" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

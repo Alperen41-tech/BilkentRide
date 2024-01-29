@@ -141,7 +141,7 @@
         android:id="@+id/saveNewPasswordButton"
         android:layout_width="266dp"
         android:layout_height="51dp"
-        android:background="@drawable/rounded_rectangle_yellow_button_shape"
+        android:background="@drawable/rounded_rectangle_red_shape"
         android:fontFamily="@font/ubuntu_bold"
         android:onClick="saveNewPasswordButtonClicked"
         android:text="Save New Password"
