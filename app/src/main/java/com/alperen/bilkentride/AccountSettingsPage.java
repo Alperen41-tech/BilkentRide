@@ -48,23 +48,25 @@ public class AccountSettingsPage extends AppCompatActivity {
     public void editProfileButtonClicked(View view)
     {
 
-    }
-
-    public void passwordButtonClicked()
-    {
+        Intent intent = new Intent(this, EditProfilePage.class);
+        startActivity(intent);
 
     }
 
-    public void preferencesButtonClicked()
+    public void passwordButtonClicked(View view)
     {
-
+        Intent intent = new Intent(this, SecurityPage.class);
+        startActivity(intent);
     }
 
-    public void logOutButtonClicked()
+    public void preferencesButtonClicked(View view)
     {
-        if (my_auth.getCurrentUser() != null){
-            my_auth.signOut();
-        }
+        //TODO creating the activvity of preferences and establisheing a patheay to go through over here
+    }
+
+    public void logOutButtonClicked(View view)
+    {
+        my_auth.signOut();
 
         Intent intent = new Intent(AccountSettingsPage.this, MainActivity.class);
         startActivity(intent);
@@ -72,23 +74,25 @@ public class AccountSettingsPage extends AppCompatActivity {
         Utilities.showToast(this,"Signed Out");
     }
 
-    public void chatButtonClicked()
+    public void chatButtonClicked(View view)
     {
         Intent intent = new Intent(this, ChatsPage.class);
         startActivity(intent);
         finish();
     }
 
-    public void mainPageButtonClicked()
+    public void mainPageButtonClicked(View view)
     {
         Intent intent = new Intent(this, FindingRingAndRidePage.class);
         startActivity(intent);
         finish();
     }
 
-    public void profileButtonClicked()
-    {
-
-
+    public void goingMainPageButtonClicked(View view){
+        Intent intent = new Intent(this, FindingRingAndRidePage.class);
+        startActivity(intent);
+        finish();
     }
+
+
 }

@@ -15,6 +15,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageButton
+            style="@style/Regular_Backwards_Arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="goingMainPageButtonClicked"></ImageButton>
+
         <TextView
             android:id="@+id/RideText"
             style="@style/Regular_Page_Heading_Text"
