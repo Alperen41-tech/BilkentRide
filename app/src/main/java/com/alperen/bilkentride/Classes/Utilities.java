@@ -2,8 +2,11 @@ package com.alperen.bilkentride.Classes;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Handler;
 import android.os.Looper;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -116,6 +119,39 @@ public class Utilities {
 
     }
 
+
+    public static void makingNormalEdges(View component){
+
+        GradientDrawable gradientDrawable_bold;
+
+
+        gradientDrawable_bold = new GradientDrawable();
+        gradientDrawable_bold.setShape(GradientDrawable.RECTANGLE);
+        gradientDrawable_bold.setColor(Color.WHITE); // Set the background color (in this case, red)
+        gradientDrawable_bold.setCornerRadius(40);
+        gradientDrawable_bold.setStroke(0, Color.WHITE); // Set the border size (2px) and color (black)
+
+
+
+        component.setBackground(gradientDrawable_bold);
+
+
+
+    }
+
+
+    public static void makingThickerEdges(View component, int cornerRadius, int stroke_size, int backgroudColor, int border_color){
+        GradientDrawable gradientDrawable_normal;
+
+        gradientDrawable_normal = new GradientDrawable();
+        gradientDrawable_normal.setShape(GradientDrawable.RECTANGLE);
+        gradientDrawable_normal.setCornerRadius(cornerRadius);
+        gradientDrawable_normal.setColor(backgroudColor); // Set the background color (in this case, red)
+        gradientDrawable_normal.setStroke(stroke_size, border_color);
+
+
+        component.setBackground(gradientDrawable_normal);
+    }
 
 
 
