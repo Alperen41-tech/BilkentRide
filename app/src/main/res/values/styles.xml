@@ -8,25 +8,23 @@
     </style>
 
     <style name="Regular_Page_Heading_Text">
-        <!-- Apply the font family style -->
         <item name="android:fontFamily">@font/ubuntu_bold</item>
-        <!-- Define other text attributes as needed -->
         <item name="android:textSize">27sp</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:layout_marginVertical">13dp</item>
-        <item name="android:layout_marginHorizontal">5dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_weight">6</item>
     </style>
 
     <style name="Regular_Backwards_Arrow">
         <item name="android:src">@drawable/vector_back</item>
         <item name="android:background">@color/red</item>
-        <item name="android:layout_marginTop">20sp</item>
-        <item name="android:layout_marginHorizontal">13dp</item>
+        <item name="android:layout_weight">1</item>
     </style>
 
     <style name="Regular_LinearLayout_ForTop">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">60dp</item>
+        <item name="android:gravity">center_vertical</item>
         <item name="android:background">@color/red</item>
 
 
