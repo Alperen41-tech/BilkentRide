@@ -6,19 +6,23 @@ public class Message {
     private String text;
     private boolean isMine;
 
+    private boolean isRead;
+
 
     public Message() {
         sentById = null;
         time = null;
         text = null;
         isMine = false;
+        isRead = false;
     }
 
-    public Message(String sentById, String time, String text, boolean isMine) {
+    public Message(String sentById, String time, String text, boolean isMine, boolean isRead) {
         this.sentById = sentById;
         this.time = time;
         this.text = text;
         this.isMine = isMine;
+        this.isRead = isRead;
     }
 
     public String getSentById() {
@@ -52,4 +56,18 @@ public class Message {
     public void setMine(boolean mine) {
         isMine = mine;
     }
+
+    public boolean isRead() {
+        return isRead;
+    }
+
+    public void setRead(boolean read) {
+        isRead = read;
+    }
+
+
+
+
+
+
 }
