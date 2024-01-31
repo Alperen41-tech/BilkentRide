@@ -13,6 +13,7 @@ import com.alperen.bilkentride.databinding.ActivityMainBinding;
 import com.alperen.bilkentride.register.BirthdayGet;
 import com.alperen.bilkentride.register.DepartmentGet;
 import com.alperen.bilkentride.register.EmailGet;
+import com.alperen.bilkentride.register.ForgotPassword;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -110,7 +111,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void forgotPasswordTextClicked(View view){
 
-
+        Intent intent = new Intent(this, ForgotPassword.class);
+        startActivity(intent);
     }
 
 
