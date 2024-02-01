@@ -3,6 +3,7 @@ package com.alperen.bilkentride;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -55,6 +56,8 @@ public class ChatsPage extends AppCompatActivity {
 
 
 
+
+        
 
     }
 
@@ -137,6 +140,10 @@ public class ChatsPage extends AppCompatActivity {
 
     private void settingRecyclerView(ArrayList<ChatUserShowCase> users){
         //Todo handling recycler view according Arraylist chatUserShowCase
+
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(ChatsPage.this));
+        ChatsAdapter chatsAdapter = new ChatsAdapter(users);
+        binding.recyclerView.setAdapter(chatsAdapter);
 
         /*
          Take a look at ChatUserShowCase class, you will find how to get user name, surname and photoURL
