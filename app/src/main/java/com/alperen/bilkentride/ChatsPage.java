@@ -1,5 +1,6 @@
 package com.alperen.bilkentride;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,10 +10,10 @@ import android.view.View;
 
 import com.alperen.bilkentride.Classes.Chat;
 import com.alperen.bilkentride.Classes.User;
-import com.alperen.bilkentride.Classes.UserGet;
 import com.alperen.bilkentride.Classes.Utilities;
+import com.alperen.bilkentride.Classes.ChatUserShowCase;
 import com.alperen.bilkentride.databinding.ActivityChatsPageBinding;
-import com.alperen.bilkentride.databinding.ActivityPasswordGetBinding;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -20,6 +21,7 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.protobuf.Value;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -68,44 +70,68 @@ public class ChatsPage extends AppCompatActivity {
                 }
 
                 if (value != null) {
-                    updateUI(value);
+                    updateUI(value); //user object to be returned with value
                 }
             }
         });
+
     }
 
 
 
     private void updateUI(DocumentSnapshot doc){
 
-        ArrayList<Chat> chats = new ArrayList<>();
+        User current_user = doc.toObject(User.class);
+        ArrayList<ChatUserShowCase> appearence_user = new ArrayList<>();
 
-        User user = doc.toObject(User.class);
 
-        for (String otherId: user.getConversationsWithId()){
-            firestore.collection("Chats")
-                    .whereIn("firstUserId", Arrays.asList(user.getId(), otherId))
-                    .whereIn("secondUserId", Arrays.asList(user.getId(), otherId)).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                        @Override
-                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                            for (DocumentSnapshot doc: queryDocumentSnapshots){
-                                Chat chat = doc.toObject(Chat.class);
-                                chats.add(chat);
-                            }
-                        }
-                    });
+        for (String otherId: current_user.getConversationsWithId()){
+
+            ChatUserShowCase other_user = new ChatUserShowCase();
+            other_user.setId_of_other(otherId);
+
+            firestore.collection("Users").document(otherId).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                @Override
+                public void onSuccess(DocumentSnapshot documentSnapshot) {
+                    User oth = documentSnapshot.toObject(User.class);
+                    other_user.setName(oth.getUserName());
+                    other_user.setSurname(oth.getUserSurname());
+                    other_user.setPhotoURL(oth.getUserPhotoUrl());
+
+                    firestore.collection("Chats")
+                            .whereIn("firstUserId", Arrays.asList(current_user.getId(), oth.getId()))
+                            .whereIn("secondUserId", Arrays.asList(current_user.getId(), oth.getId())).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                                @Override
+                                public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                    for (DocumentSnapshot doc: queryDocumentSnapshots){
+                                        Chat curr_chat = doc.toObject(Chat.class);
+                                        other_user.setUnreadMessage(curr_chat.getUnreadMessages());
+                                        return;
+                                    }
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Utilities.showToast(ChatsPage.this, e.getLocalizedMessage());
+                                }
+                            });
+
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Utilities.showToast(ChatsPage.this, e.getLocalizedMessage());
+                }
+            });
+
+
+            appearence_user.add(other_user);
         }
 
 
-
-
-
-
-
-
-
-
+        //Todo handling recycler view according Arraylist chatUserShowCase
     }
+
 
 
 
