@@ -49,6 +49,8 @@ public class ChatsPage extends AppCompatActivity {
 
 
 
+        all_chatsListener();
+
 
 
 
@@ -154,9 +156,7 @@ public class ChatsPage extends AppCompatActivity {
 
          */
 
-
-
-
+        
     }
 
 
