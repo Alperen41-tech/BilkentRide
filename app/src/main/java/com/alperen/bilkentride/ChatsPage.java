@@ -21,11 +21,14 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.protobuf.Value;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import okhttp3.internal.Util;
 
@@ -48,79 +51,69 @@ public class ChatsPage extends AppCompatActivity {
         firestore = FirebaseFirestore.getInstance();
 
 
-
         all_chatsListener();
-
-
-
-
-
-
-
-
-
-        
-
     }
 
 
 
     private void all_chatsListener(){
-        firestore.collection("Users").document(my_auth.getUid()).addSnapshotListener(new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                if (error != null){
-                    Utilities.showToast(ChatsPage.this, error.getLocalizedMessage());
-                    return;
-                }
 
-                if (value != null) {
-                    updateUI(value); //user object to be returned with value
-                }
-            }
-        });
+
+
+        firestore.collection("Chats")
+                .whereArrayContains("compOfId", my_auth.getUid())
+                //Todo order the list of documents by saying: .orderBy("lastChangedDate", Query.Direction.DESCENDING)
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        if (error != null){
+                            Utilities.showToast(ChatsPage.this, error.getLocalizedMessage());
+                        }
+
+                        if( value != null){
+                            updateUI(value);
+                        }
+                    }
+                });
 
     }
 
 
 
-    private void updateUI(DocumentSnapshot doc){
+    private void updateUI(QuerySnapshot docs){
 
-        User current_user = doc.toObject(User.class);
-        ArrayList<ChatUserShowCase> appearence_user = new ArrayList<>();
+        AtomicInteger queryCounter = new AtomicInteger(0);
 
+        ArrayList<ChatUserShowCase> chats = new ArrayList<>();
 
-        for (String otherId: current_user.getConversationsWithId()){
+        for (DocumentSnapshot doc: docs){
 
-            ChatUserShowCase other_user = new ChatUserShowCase();
-            other_user.setId_of_other(otherId);
+            ChatUserShowCase chat_row = new ChatUserShowCase();
 
-            firestore.collection("Users").document(otherId).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            Chat chat = doc.toObject(Chat.class);
+
+            String my_Id = my_auth.getUid();
+            String other_Id = "";
+
+            if (my_Id.equals(chat.getFirstUserId())){
+                other_Id = chat.getSecondUserId();
+            }
+
+            else{
+                other_Id = chat.getFirstUserId();
+            }
+
+            firestore.collection("Users").document(other_Id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                 @Override
                 public void onSuccess(DocumentSnapshot documentSnapshot) {
-                    User oth = documentSnapshot.toObject(User.class);
-                    other_user.setName(oth.getUserName());
-                    other_user.setSurname(oth.getUserSurname());
-                    other_user.setPhotoURL(oth.getUserPhotoUrl());
-
-                    firestore.collection("Chats")
-                            .whereIn("firstUserId", Arrays.asList(current_user.getId(), oth.getId()))
-                            .whereIn("secondUserId", Arrays.asList(current_user.getId(), oth.getId())).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                                @Override
-                                public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                                    for (DocumentSnapshot doc: queryDocumentSnapshots){
-                                        Chat curr_chat = doc.toObject(Chat.class);
-                                        other_user.setUnreadMessage(curr_chat.getUnreadMessages());
-                                        return;
-                                    }
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Utilities.showToast(ChatsPage.this, e.getLocalizedMessage());
-                                }
-                            });
-
+                    User other_user = documentSnapshot.toObject(User.class);
+                    chat_row.setId_of_other(other_user.getId());
+                    chat_row.setName(other_user.getUserSurname());
+                    chat_row.setSurname(other_user.getUserSurname());
+                    chat_row.setPhotoURL(other_user.getUserPhotoUrl());
+                    chat_row.setUnreadMessage(chat.getUnreadMessages());
+                    chats.add(chat_row);
+                    settingRecyclerView(chats);
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
@@ -129,14 +122,12 @@ public class ChatsPage extends AppCompatActivity {
                 }
             });
 
-
-            appearence_user.add(other_user);
         }
 
 
-        settingRecyclerView(appearence_user);
-
     }
+
+
 
 
 
@@ -146,6 +137,8 @@ public class ChatsPage extends AppCompatActivity {
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(ChatsPage.this));
         ChatsAdapter chatsAdapter = new ChatsAdapter(users);
         binding.recyclerView.setAdapter(chatsAdapter);
+        chatsAdapter.notifyDataSetChanged();
+
 
         /*
          Take a look at ChatUserShowCase class, you will find how to get user name, surname and photoURL
@@ -155,6 +148,9 @@ public class ChatsPage extends AppCompatActivity {
 
 
          */
+
+
+
 
         
     }

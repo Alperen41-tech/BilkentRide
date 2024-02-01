@@ -1,5 +1,8 @@
 package com.alperen.bilkentride.Classes;
 
+import com.google.firebase.Timestamp;
+import com.google.firebase.firestore.FieldValue;
+
 import java.util.ArrayList;
 
 public class Chat {
@@ -7,6 +10,10 @@ public class Chat {
     private String secondUserId;
     private ArrayList<Message> messagesOnThisChat;
     private int unreadMessages;
+    private FieldValue lastChangedDate;
+
+    private ArrayList<String> compOfId;
+
 
 
 
@@ -16,6 +23,8 @@ public class Chat {
         secondUserId = null;
         messagesOnThisChat = new ArrayList<>();
         unreadMessages = 0;
+        lastChangedDate = FieldValue.serverTimestamp();
+        compOfId = new ArrayList<>();
     }
 
     public Chat(String firstUserId, String secondUserId, ArrayList<Message> messagesOnThisChat) {
@@ -23,6 +32,8 @@ public class Chat {
         this.secondUserId = secondUserId;
         this.messagesOnThisChat = messagesOnThisChat;
         unreadMessages = 0;
+        lastChangedDate = FieldValue.serverTimestamp();
+        compOfId = new ArrayList<>();
     }
 
     public String getFirstUserId() {
@@ -55,6 +66,22 @@ public class Chat {
 
     public void setUnreadMessages(String curren_user_ID) {
         this.unreadMessages = calculateCountOfUnReadMessage(curren_user_ID);
+    }
+
+    public FieldValue getLast_changed_Date() {
+        return lastChangedDate;
+    }
+
+    public void setLast_changed_Date() {
+        this.lastChangedDate = FieldValue.serverTimestamp();
+    }
+
+    public ArrayList<String> getCompOfId() {
+        return compOfId;
+    }
+
+    public void setCompOfId(ArrayList<String> compOfId) {
+        this.compOfId = compOfId;
     }
 
     private int calculateCountOfUnReadMessage(String current_user_ID){
