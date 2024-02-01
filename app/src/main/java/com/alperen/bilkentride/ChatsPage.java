@@ -129,7 +129,27 @@ public class ChatsPage extends AppCompatActivity {
         }
 
 
+        settingRecyclerView(appearence_user);
+
+    }
+
+
+
+    private void settingRecyclerView(ArrayList<ChatUserShowCase> users){
         //Todo handling recycler view according Arraylist chatUserShowCase
+
+        /*
+         Take a look at ChatUserShowCase class, you will find how to get user name, surname and photoURL
+         in addition to that to upload photo to imageView for example yo can use the fallowing method
+
+         Picasso.get().load(photoURl).into(imageView);
+
+
+         */
+
+
+
+
     }
 
 
