@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RideApprovalPage">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        style="@style/Regular_LinearLayout_ForTop"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/goingBackMainPageFromRideApprovalPage"
+            style="@style/Regular_Backwards_Arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="backButtonClicked"></ImageButton>
+
+        <TextView
+            android:id="@+id/RideText"
+            style="@style/Regular_Page_Heading_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ride"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        style="@style/Regular_LinearLayout_ForTop"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/chatButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="67dp"
+            android:layout_marginRight="50dp"
+            android:background="#00FFFFFF"
+            android:onClick="chatButtonClicked"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/chat_button" />
+
+        <ImageButton
+            android:id="@+id/mainPageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="#00FFFFFF"
+            android:onClick="mainPageButtonClicked"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/main_page_button" />
+
+        <ImageButton
+            android:id="@+id/profileButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="#00FFFFFF"
+            android:onClick="profileButtonClicked"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageButton2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/profile_button" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="282dp"
+        android:layout_height="94dp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:gravity="center"
+        android:text="Congratulations, the rider is informed and  Your ride is all set !!!"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.263" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="350dp"
+        android:layout_height="116dp"
+        android:fontFamily="@font/ubuntu_condensed"
+        android:gravity="center"
+        android:text="We would really apprecitate your feedback if you have so!\n Please let us now if you liked Bilkent Ride  "
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.468" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="350dp"
+        android:layout_height="113dp"
+        android:fontFamily="@font/ubuntu_condensed"
+        android:gravity="center"
+        android:text="Have a pleasant and safe trip :)"
+        android:textAlignment="center"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.688" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="Contact information for feedback\nabcdefh@gmail.com"
+        android:textColor="@color/gray_40"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.858" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
