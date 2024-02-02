@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
 
+import com.alperen.bilkentride.Classes.ChatUserShowCase;
 import com.alperen.bilkentride.Classes.Message;
 import com.alperen.bilkentride.databinding.ActivityChatsPageBinding;
 
@@ -43,4 +44,9 @@ public class DialogPage extends AppCompatActivity {
 
     }
 
+    private void settingRecyclerView(ArrayList<Message> messages){
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(DialogPage.this));
+        DialogAdapter dialogAdapter = new DialogAdapter(messages);
+        binding.recyclerView.setAdapter(dialogAdapter);
+    }
 }
