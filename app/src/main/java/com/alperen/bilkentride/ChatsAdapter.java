@@ -1,5 +1,6 @@
 package com.alperen.bilkentride;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.alperen.bilkentride.Classes.ChatUserShowCase;
 import com.alperen.bilkentride.databinding.ActivityChatsPageBinding;
 import com.alperen.bilkentride.databinding.ChatsPageRowBinding;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -33,7 +35,34 @@ public class ChatsAdapter extends RecyclerView.Adapter<ChatsAdapter.ChatsHolder>
     @Override
     public void onBindViewHolder(@NonNull ChatsAdapter.ChatsHolder holder, int position)
     {
-        holder.binding.nameSurnameText.setText(users.get(position).getName());
+        //set name
+        holder.binding.nameText.setText(users.get(position).getName());
+
+        //set surname
+        holder.binding.surnameText.setText(users.get(position).getSurname());
+
+        //set profile photo
+        String photoURL = users.get(position).getPhotoURL();
+        Picasso.get().load(photoURL).into(holder.binding.profilePhotoImageC);
+
+
+        /*
+         * This method is related to what will happen after user click on anybody in conversation page
+         */
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(holder.itemView.getContext(), DialogPage.class);
+
+
+
+
+
+
+
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override

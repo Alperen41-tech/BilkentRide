@@ -148,12 +148,8 @@ public class ChatsPage extends AppCompatActivity {
 
 
          */
-
-
-
-
-        
     }
+
 
 
 

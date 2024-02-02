@@ -4,18 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp">
+    android:layout_margin="5dp"
+    android:onClick="conversationClicked">
 
+    <ImageView
+        android:id="@+id/profilePhotoImageC"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
+        app:srcCompat="@drawable/profile_photo_image" />
 
-    <TextView
-        android:id="@+id/nameSurnameText"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:fontFamily="@font/ubuntu_bold"
-        android:text="Alperen\nKarslıoğlu"
-        android:textSize="18sp"
-        android:layout_marginLeft="5dp"/>
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ubuntu_bold"
+            android:text="Alperen"
+            android:textSize="18sp"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/surnameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ubuntu_bold"
+            android:text="Karslıoğlu"
+            android:textSize="18sp"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
 
 
 </LinearLayout>
