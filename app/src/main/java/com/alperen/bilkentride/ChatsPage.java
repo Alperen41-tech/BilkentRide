@@ -108,7 +108,7 @@ public class ChatsPage extends AppCompatActivity {
                 public void onSuccess(DocumentSnapshot documentSnapshot) {
                     User other_user = documentSnapshot.toObject(User.class);
                     chat_row.setId_of_other(other_user.getId());
-                    chat_row.setName(other_user.getUserSurname());
+                    chat_row.setName(other_user.getUserName());
                     chat_row.setSurname(other_user.getUserSurname());
                     chat_row.setPhotoURL(other_user.getUserPhotoUrl());
                     chat_row.setUnreadMessage(chat.getUnreadMessages());
