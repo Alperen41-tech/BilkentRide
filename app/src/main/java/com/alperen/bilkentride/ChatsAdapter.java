@@ -58,8 +58,6 @@ public class ChatsAdapter extends RecyclerView.Adapter<ChatsAdapter.ChatsHolder>
 
 
 
-
-
                 holder.itemView.getContext().startActivity(intent);
             }
         });

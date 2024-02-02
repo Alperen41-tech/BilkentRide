@@ -4,6 +4,11 @@ public class Message {
     private String sentById;
     private String time;
     private String text;
+
+    private String sentByName;
+    private String sentBySurname;
+
+    private String sentByPhotoUrl;
     private boolean isMine;
 
     private boolean isRead;
@@ -65,9 +70,27 @@ public class Message {
         isRead = read;
     }
 
+    public String getSentByName() {
+        return sentByName;
+    }
 
+    public void setSentByName(String sentByName) {
+        this.sentByName = sentByName;
+    }
 
+    public String getSentBySurname() {
+        return sentBySurname;
+    }
 
+    public void setSentBySurname(String sentBySurname) {
+        this.sentBySurname = sentBySurname;
+    }
 
+    public String getSentByPhotoUrl() {
+        return sentByPhotoUrl;
+    }
 
+    public void setSentByPhotoUrl(String sentByPhotoUrl) {
+        this.sentByPhotoUrl = sentByPhotoUrl;
+    }
 }
