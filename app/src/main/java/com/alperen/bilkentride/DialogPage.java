@@ -43,16 +43,4 @@ public class DialogPage extends AppCompatActivity {
 
     }
 
-    /*
-     * This method sets recycler view to be able to show messages between users
-     */
-    private void settingRecyclerView(ArrayList<Message> messages){
-        //Todo handling recycler view according Arraylist Message
-
-        binding.recyclerView.setLayoutManager(new LinearLayoutManager(DialogPage.this));
-        //ChatsAdapter chatsAdapter = new ChatsAdapter();
-        //binding.recyclerView.setAdapter(chatsAdapter);
-        //chatsAdapter.notifyDataSetChanged();
-
-    }
 }
