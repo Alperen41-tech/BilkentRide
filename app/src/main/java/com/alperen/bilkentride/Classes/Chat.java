@@ -64,17 +64,17 @@ public class Chat {
         return unreadMessages;
     }
 
-    public void setUnreadMessages(String curren_user_ID) {
-        this.unreadMessages = calculateCountOfUnReadMessage(curren_user_ID);
+    public void setUnreadMessages(int count) {
+        this.unreadMessages = count;
     }
 
-    public FieldValue getLast_changed_Date() {
+    /*public FieldValue getLastChangedDate() {
         return lastChangedDate;
     }
 
-    public void setLast_changed_Date() {
+    public void setLastChangedDate(FieldValue value) {
         this.lastChangedDate = FieldValue.serverTimestamp();
-    }
+    }*/
 
     public ArrayList<String> getCompOfId() {
         return compOfId;

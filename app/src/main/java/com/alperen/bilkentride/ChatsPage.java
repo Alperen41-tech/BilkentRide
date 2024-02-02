@@ -17,6 +17,7 @@ import com.alperen.bilkentride.databinding.ActivityChatsPageBinding;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -30,6 +31,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import kotlin.random.URandomKt;
 import okhttp3.internal.Util;
 
 public class ChatsPage extends AppCompatActivity {
@@ -51,6 +53,16 @@ public class ChatsPage extends AppCompatActivity {
         firestore = FirebaseFirestore.getInstance();
 
 
+
+
+
+
+
+
+
+
+
+
         all_chatsListener();
     }
 
@@ -62,7 +74,6 @@ public class ChatsPage extends AppCompatActivity {
 
         firestore.collection("Chats")
                 .whereArrayContains("compOfId", my_auth.getUid())
-                //Todo order the list of documents by saying: .orderBy("lastChangedDate", Query.Direction.DESCENDING)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
@@ -82,12 +93,10 @@ public class ChatsPage extends AppCompatActivity {
 
     private void updateUI(QuerySnapshot docs){
 
-        AtomicInteger queryCounter = new AtomicInteger(0);
 
         ArrayList<ChatUserShowCase> chats = new ArrayList<>();
 
         for (DocumentSnapshot doc: docs){
-
             ChatUserShowCase chat_row = new ChatUserShowCase();
 
             Chat chat = doc.toObject(Chat.class);
@@ -102,6 +111,7 @@ public class ChatsPage extends AppCompatActivity {
             else{
                 other_Id = chat.getFirstUserId();
             }
+
 
             firestore.collection("Users").document(other_Id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                 @Override

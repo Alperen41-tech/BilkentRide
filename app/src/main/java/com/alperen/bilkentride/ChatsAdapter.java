@@ -1,6 +1,8 @@
 package com.alperen.bilkentride;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,16 +51,15 @@ public class ChatsAdapter extends RecyclerView.Adapter<ChatsAdapter.ChatsHolder>
         /*
          * This method is related to what will happen after user click on anybody in conversation page
          */
+        String otherId = users.get(position).getId_of_other();
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(holder.itemView.getContext(), DialogPage.class);
-
-
-
-
-
+                intent.putExtra("otherId", otherId);
                 holder.itemView.getContext().startActivity(intent);
+
+
             }
         });
     }

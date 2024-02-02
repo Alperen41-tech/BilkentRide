@@ -1,14 +1,23 @@
 package com.alperen.bilkentride;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.alperen.bilkentride.Classes.Chat;
+import com.alperen.bilkentride.Classes.Utilities;
 import com.alperen.bilkentride.databinding.ActivityFindingRingAndRidePageBinding;
 import com.alperen.bilkentride.databinding.ActivityMainBinding;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
 
 public class FindingRingAndRidePage extends AppCompatActivity {
 
@@ -16,12 +25,37 @@ public class FindingRingAndRidePage extends AppCompatActivity {
 
     private ActivityFindingRingAndRidePageBinding binding;
 
+    private FirebaseFirestore firestore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityFindingRingAndRidePageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        firestore = FirebaseFirestore.getInstance();
+        // creating chats and messages on it to see how it goes
+        Chat random = new Chat();
+        random.setFirstUserId("7blVRjmbsQYp8FJEB60NfH61K5j1");
+        random.setSecondUserId("YIAmVBLv3cNcuXIalwtHEAZa77x2");
+
+        ArrayList<String> list = new ArrayList<>();
+        list.add(random.getFirstUserId());
+        list.add(random.getSecondUserId());
+
+        random.setCompOfId(list);
+
+        firestore.collection("Chats").add(random).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                Utilities.showToast(FindingRingAndRidePage.this, "Chat is created");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Utilities.showToast(FindingRingAndRidePage.this, e.getLocalizedMessage());
+            }
+        });
 
 
     }
