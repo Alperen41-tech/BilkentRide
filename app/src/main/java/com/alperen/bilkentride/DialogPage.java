@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.WindowManager;
 
@@ -134,6 +135,17 @@ public class DialogPage extends AppCompatActivity {
         binding.recyclerViewDialogue.setLayoutManager(new LinearLayoutManager(DialogPage.this));
         DialogAdapter dialogAdapter = new DialogAdapter(messages);
         binding.recyclerViewDialogue.setAdapter(dialogAdapter);
+
+
+        Handler handler = new Handler();
+
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                binding.recyclerViewDialogue.scrollToPosition(dialogAdapter.getItemCount() - 1);
+            }
+        }, 100);
+
 
         dialogAdapter.notifyDataSetChanged();
     }
