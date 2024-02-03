@@ -33,10 +33,10 @@ public class FindingRingAndRidePage extends AppCompatActivity {
         binding = ActivityFindingRingAndRidePageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        firestore = FirebaseFirestore.getInstance();
+        /*firestore = FirebaseFirestore.getInstance();
         // creating chats and messages on it to see how it goes
         Chat random = new Chat();
-        random.setFirstUserId("7blVRjmbsQYp8FJEB60NfH61K5j1");
+        random.setFirstUserId("L6tR8YQvULOa8l4qoO5waWARJum1");
         random.setSecondUserId("YIAmVBLv3cNcuXIalwtHEAZa77x2");
 
         ArrayList<String> list = new ArrayList<>();
@@ -55,7 +55,7 @@ public class FindingRingAndRidePage extends AppCompatActivity {
             public void onFailure(@NonNull Exception e) {
                 Utilities.showToast(FindingRingAndRidePage.this, e.getLocalizedMessage());
             }
-        });
+        });*/
 
 
     }

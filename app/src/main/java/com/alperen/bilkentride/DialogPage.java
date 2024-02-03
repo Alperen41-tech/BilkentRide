@@ -172,6 +172,7 @@ public class DialogPage extends AppCompatActivity {
                                         String doc_Id = doc.getId();
                                         firestore.collection("Chats").document(doc_Id).update("messagesOnThisChat", messages_on_thischat);
                                         settingRecyclerView(messages_on_thischat);
+                                        binding.messageEditText.setText("");
                                     }
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
