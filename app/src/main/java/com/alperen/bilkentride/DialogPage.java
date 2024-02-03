@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
+
 
 import com.alperen.bilkentride.Classes.Chat;
 import com.alperen.bilkentride.Classes.ChatUserShowCase;
@@ -26,7 +26,6 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
@@ -44,8 +43,6 @@ public class DialogPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
-
         super.onCreate(savedInstanceState);
         binding = ActivityDialogPageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
