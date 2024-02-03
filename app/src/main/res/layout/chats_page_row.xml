@@ -15,8 +15,9 @@
         app:srcCompat="@drawable/profile_photo_image" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="60"
         android:orientation="vertical">
 
         <TextView
@@ -37,6 +38,20 @@
             android:textSize="18sp"
             android:layout_marginLeft="10dp"/>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/messageNumber"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@drawable/circle_shape"
+        android:fontFamily="@font/ubuntu_bold"
+        android:gravity="center"
+        android:text="10"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp" />
 
 
 </LinearLayout>

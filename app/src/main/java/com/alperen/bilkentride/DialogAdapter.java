@@ -30,17 +30,6 @@ public class DialogAdapter extends RecyclerView.Adapter<DialogAdapter.DialogHold
     public void onBindViewHolder(@NonNull DialogHolder holder, int position) {
         if (messages.get(position).isMine() == true)
         {
-            holder.binding.rightChatLayout.setVisibility(View.GONE);
-            holder.binding.leftChatLayout.setVisibility(View.VISIBLE);
-
-            holder.binding.myMessageText.setText(messages.get(position).getText());
-            holder.binding.myNameText.setText(messages.get(position).getSentByName());
-
-            String photoURL = messages.get(position).getSentByPhotoUrl();
-            Picasso.get().load(photoURL).into(holder.binding.myProfilePhoto);
-        }
-        else
-        {
             holder.binding.rightChatLayout.setVisibility(View.VISIBLE);
             holder.binding.leftChatLayout.setVisibility(View.GONE);
 
@@ -49,6 +38,17 @@ public class DialogAdapter extends RecyclerView.Adapter<DialogAdapter.DialogHold
 
             String photoURL = messages.get(position).getSentByPhotoUrl();
             Picasso.get().load(photoURL).into(holder.binding.yourProfilePhoto);
+        }
+        else
+        {
+            holder.binding.rightChatLayout.setVisibility(View.GONE);
+            holder.binding.leftChatLayout.setVisibility(View.VISIBLE);
+
+            holder.binding.myMessageText.setText(messages.get(position).getText());
+            holder.binding.myNameText.setText(messages.get(position).getSentByName());
+
+            String photoURL = messages.get(position).getSentByPhotoUrl();
+            Picasso.get().load(photoURL).into(holder.binding.myProfilePhoto);
         }
     }
 

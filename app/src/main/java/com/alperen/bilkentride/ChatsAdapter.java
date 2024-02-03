@@ -47,6 +47,16 @@ public class ChatsAdapter extends RecyclerView.Adapter<ChatsAdapter.ChatsHolder>
         String photoURL = users.get(position).getPhotoURL();
         Picasso.get().load(photoURL).into(holder.binding.profilePhotoImageC);
 
+        if (users.get(position).getUnreadMessage() == 0)
+        {
+            holder.binding.messageNumber.setVisibility(View.GONE);
+        }
+        else
+        {
+            holder.binding.messageNumber.setText(View.VISIBLE);
+            holder.binding.messageNumber.setText(users.get(position).getUnreadMessage());
+        }
+
 
         /*
          * This method is related to what will happen after user click on anybody in conversation page
