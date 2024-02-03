@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 
 import com.alperen.bilkentride.Classes.Chat;
@@ -134,20 +135,16 @@ public class DialogPage extends AppCompatActivity {
         System.out.println("updateuı");
         binding.recyclerViewDialogue.setLayoutManager(new LinearLayoutManager(DialogPage.this));
         DialogAdapter dialogAdapter = new DialogAdapter(messages);
+
+        binding.recyclerViewDialogue.scrollToPosition(dialogAdapter.getItemCount() -1 );
         binding.recyclerViewDialogue.setAdapter(dialogAdapter);
 
-
-        Handler handler = new Handler();
-
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                binding.recyclerViewDialogue.scrollToPosition(dialogAdapter.getItemCount() - 1);
-            }
-        }, 100);
-
-
         dialogAdapter.notifyDataSetChanged();
+
+        
+
+
+
     }
 
 
@@ -187,7 +184,7 @@ public class DialogPage extends AppCompatActivity {
 
                                         String doc_Id = doc.getId();
                                         firestore.collection("Chats").document(doc_Id).update("messagesOnThisChat", messages_on_thischat);
-                                        settingRecyclerView(messages_on_thischat);
+                                        //settingRecyclerView(messages_on_thischat);
                                         binding.messageEditText.setText("");
                                     }
                                 }
