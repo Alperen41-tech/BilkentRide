@@ -37,11 +37,11 @@ public class FindingRingAndRidePage extends AppCompatActivity {
         binding = ActivityFindingRingAndRidePageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        /*firestore = FirebaseFirestore.getInstance();
+        firestore = FirebaseFirestore.getInstance();
         // creating chats and messages on it to see how it goes
         Chat random = new Chat();
         random.setFirstUserId("L6tR8YQvULOa8l4qoO5waWARJum1");
-        random.setSecondUserId("DC6UMCYhemaBo7ofVlUEIIhSSvp2");
+        random.setSecondUserId("YIAmVBLv3cNcuXIalwtHEAZa77x2");
 
         ArrayList<String> list = new ArrayList<>();
         list.add(random.getFirstUserId());
@@ -52,7 +52,7 @@ public class FindingRingAndRidePage extends AppCompatActivity {
         Map<String, Object> hebele = new HashMap<>();
         hebele.put("lastDateChanged", FieldValue.serverTimestamp());
 
-        firestore.collection("Chats").document("hebele2").set(random).addOnSuccessListener(new OnSuccessListener<Void>() {
+        firestore.collection("Chats").document("hebele1").set(random).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
                 Utilities.showToast(FindingRingAndRidePage.this , "Chat is set");
@@ -60,7 +60,7 @@ public class FindingRingAndRidePage extends AppCompatActivity {
         });
 
 
-        firestore.collection("Chats").document("hebele2").update(hebele);*/
+        //firestore.collection("Chats").document("hebele1").update(hebele);
 
 
     }
