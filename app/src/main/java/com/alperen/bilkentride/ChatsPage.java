@@ -132,7 +132,7 @@ public class ChatsPage extends AppCompatActivity {
                     chat_row.setName(other_user.getUserName());
                     chat_row.setSurname(other_user.getUserSurname());
                     chat_row.setPhotoURL(other_user.getUserPhotoUrl());
-                    chat_row.setUnreadMessage(final_count);
+                    chat_row.setUnreadMessage(5);
                     chats.add(chat_row);
                     settingRecyclerView(chats);
                 }
@@ -155,6 +155,7 @@ public class ChatsPage extends AppCompatActivity {
     private void settingRecyclerView(ArrayList<ChatUserShowCase> users){
         //Todo handling recycler view according Arraylist chatUserShowCase
 
+        System.out.println("sistem buraya girdi");
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(ChatsPage.this));
         ChatsAdapter chatsAdapter = new ChatsAdapter(users);
         binding.recyclerView.setAdapter(chatsAdapter);
