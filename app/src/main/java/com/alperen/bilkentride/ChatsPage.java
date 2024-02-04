@@ -113,7 +113,7 @@ public class ChatsPage extends AppCompatActivity {
                 }
             }
 
-            final int final_count = unreadMessages;
+            final int final_count = 5;
 
             if (my_Id.equals(chat.getFirstUserId())){
                 other_Id = chat.getSecondUserId();
