@@ -49,10 +49,8 @@ public class FindingRingAndRidePage extends AppCompatActivity {
 
         random.setCompOfId(list);
 
-        Map<String, Object> hebele = new HashMap<>();
-        hebele.put("lastDateChanged", FieldValue.serverTimestamp());
 
-        firestore.collection("Chats").document("hebele2").set(random).addOnSuccessListener(new OnSuccessListener<Void>() {
+        firestore.collection("Chats").document("hebele3").set(random).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
                 Utilities.showToast(FindingRingAndRidePage.this , "Chat is set");
@@ -60,7 +58,17 @@ public class FindingRingAndRidePage extends AppCompatActivity {
         });
 
 
-        firestore.collection("Chats").document("hebele2").update(hebele);*/
+        Map<String, Object> hebele = new HashMap<>();
+        hebele.put("lastDateChanged", FieldValue.serverTimestamp());
+
+        firestore.collection("Chats").document("hebele3").update(hebele);*/
+
+        /*firestore.collection("Chats").add(random).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                Utilities.showToast(FindingRingAndRidePage.this, "chat is created");
+            }
+        });*/
 
 
     }
