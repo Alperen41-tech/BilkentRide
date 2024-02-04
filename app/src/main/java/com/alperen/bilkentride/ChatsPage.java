@@ -57,13 +57,6 @@ public class ChatsPage extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
         all_chatsListener();
     }
 
@@ -75,6 +68,7 @@ public class ChatsPage extends AppCompatActivity {
 
         firestore.collection("Chats")
                 .whereArrayContains("compOfId", my_auth.getUid())
+                .orderBy("lastDateChanged", Query.Direction.ASCENDING)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {

@@ -4,7 +4,7 @@ import com.google.firebase.firestore.FieldValue;
 
 public class Message {
     private String sentById;
-    private FieldValue time;
+    //private FieldValue time;
     private String text;
 
     private String sentByName;
@@ -18,7 +18,7 @@ public class Message {
 
     public Message() {
         sentById = null;
-        time = FieldValue.serverTimestamp();
+        //time = FieldValue.serverTimestamp();
         text = null;
         isMine = false;
         isRead = false;
@@ -26,7 +26,7 @@ public class Message {
 
     public Message(String sentById, String text, boolean isMine, boolean isRead) {
         this.sentById = sentById;
-        this.time = FieldValue.serverTimestamp();
+        //this.time = FieldValue.serverTimestamp();
         this.text = text;
         this.isMine = isMine;
         this.isRead = isRead;

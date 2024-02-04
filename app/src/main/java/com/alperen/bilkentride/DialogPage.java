@@ -34,6 +34,8 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 import okhttp3.internal.Util;
 
@@ -206,12 +208,16 @@ public class DialogPage extends AppCompatActivity {
                                 public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                                     for (DocumentSnapshot doc: queryDocumentSnapshots){
 
+                                        Map<String, Object> timeStamp = new HashMap<>();
+                                        timeStamp.put("lastChangedDate", FieldValue.serverTimestamp());
+
                                         Chat chat = doc.toObject(Chat.class);
                                         ArrayList<Message> messages_on_thischat = chat.getMessagesOnThisChat();
                                         messages_on_thischat.add(message_new);
 
                                         String doc_Id = doc.getId();
                                         firestore.collection("Chats").document(doc_Id).update("messagesOnThisChat", messages_on_thischat);
+                                        firestore.collection("Chats").document(doc_Id).update("lastDateChanged", timeStamp);
                                         //settingRecyclerView(messages_on_thischat);
                                         binding.messageEditText.setText("");
                                     }

@@ -15,9 +15,13 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 public class FindingRingAndRidePage extends AppCompatActivity {
 
@@ -33,7 +37,7 @@ public class FindingRingAndRidePage extends AppCompatActivity {
         binding = ActivityFindingRingAndRidePageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        /*firestore = FirebaseFirestore.getInstance();
+        firestore = FirebaseFirestore.getInstance();
         // creating chats and messages on it to see how it goes
         Chat random = new Chat();
         random.setFirstUserId("L6tR8YQvULOa8l4qoO5waWARJum1");
@@ -45,17 +49,18 @@ public class FindingRingAndRidePage extends AppCompatActivity {
 
         random.setCompOfId(list);
 
-        firestore.collection("Chats").add(random).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+        Map<String, Object> hebele = new HashMap<>();
+        hebele.put("lastDateChanged", FieldValue.serverTimestamp());
+
+        firestore.collection("Chats").document("hebele").set(random).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
-            public void onSuccess(DocumentReference documentReference) {
-                Utilities.showToast(FindingRingAndRidePage.this, "Chat is created");
+            public void onSuccess(Void unused) {
+                Utilities.showToast(FindingRingAndRidePage.this , "Chat is set");
             }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Utilities.showToast(FindingRingAndRidePage.this, e.getLocalizedMessage());
-            }
-        });*/
+        });
+
+
+        firestore.collection("Chats").document("hebele").update(hebele);
 
 
     }

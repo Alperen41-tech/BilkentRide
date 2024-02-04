@@ -4,13 +4,14 @@ import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.FieldValue;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Chat {
     private String firstUserId;
     private String secondUserId;
     private ArrayList<Message> messagesOnThisChat;
     private int unreadMessages;
-    private FieldValue lastChangedDate;
+    //private Object lastChangedDate;
 
     private ArrayList<String> compOfId;
 
@@ -23,7 +24,7 @@ public class Chat {
         secondUserId = null;
         messagesOnThisChat = new ArrayList<>();
         unreadMessages = 0;
-        lastChangedDate = FieldValue.serverTimestamp();
+        //lastChangedDate = FieldValue.serverTimestamp();
         compOfId = new ArrayList<>();
     }
 
@@ -32,7 +33,7 @@ public class Chat {
         this.secondUserId = secondUserId;
         this.messagesOnThisChat = messagesOnThisChat;
         unreadMessages = 0;
-        lastChangedDate = FieldValue.serverTimestamp();
+        //lastChangedDate = FieldValue.serverTimestamp();
         compOfId = new ArrayList<>();
     }
 
@@ -68,12 +69,12 @@ public class Chat {
         this.unreadMessages = count;
     }
 
-    /*public FieldValue getLastChangedDate() {
+    /*public Object getLastChangedDate() {
         return lastChangedDate;
     }
 
-    public void setLastChangedDate(FieldValue value) {
-        this.lastChangedDate = FieldValue.serverTimestamp();
+    public void setLastChangedDate(Object lastChangedDate) {
+        this.lastChangedDate = (FieldValue) lastChangedDate;
     }*/
 
     public ArrayList<String> getCompOfId() {
