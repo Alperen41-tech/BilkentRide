@@ -49,11 +49,11 @@ public class ChatsAdapter extends RecyclerView.Adapter<ChatsAdapter.ChatsHolder>
 
         if (users.get(position).getUnreadMessage() == 0)
         {
-            holder.binding.messageNumber.setVisibility(View.GONE);
+            holder.binding.messageNumber.setVisibility(View.INVISIBLE);
         }
         else
         {
-            holder.binding.messageNumber.setText(View.VISIBLE);
+            holder.binding.messageNumber.setVisibility(View.VISIBLE);
             holder.binding.messageNumber.setText(users.get(position).getUnreadMessage());
         }
 

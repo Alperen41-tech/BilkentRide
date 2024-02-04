@@ -82,6 +82,7 @@
         android:id="@+id/yourBriefBiographyText"
         android:layout_width="290dp"
         android:layout_height="28dp"
+        android:layout_marginStart="20dp"
         android:fontFamily="@font/ubuntu_italic"
         android:text="Your Brief Biography"
         android:textSize="21sp"
