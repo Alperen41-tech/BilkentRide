@@ -106,14 +106,9 @@ public class ChatsPage extends AppCompatActivity {
             String my_Id = my_auth.getUid();
             String other_Id = "";
 
-            int unreadMessages = 0;
-            for (Message m: chat.getMessagesOnThisChat()){
-                if (m.getSentById().equals(other_Id) && !m.isRead()){
-                    unreadMessages++;
-                }
-            }
 
-            final int final_count = unreadMessages;
+
+
 
             if (my_Id.equals(chat.getFirstUserId())){
                 other_Id = chat.getSecondUserId();
@@ -127,12 +122,19 @@ public class ChatsPage extends AppCompatActivity {
             firestore.collection("Users").document(other_Id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                 @Override
                 public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                    int unreadMessages = 0;
+                    for (Message m: chat.getMessagesOnThisChat()){
+                        if (!m.getSentById().equals(my_Id) && !m.isRead()){
+                            unreadMessages++;
+                        }
+                    }
                     User other_user = documentSnapshot.toObject(User.class);
                     chat_row.setId_of_other(other_user.getId());
                     chat_row.setName(other_user.getUserName());
                     chat_row.setSurname(other_user.getUserSurname());
                     chat_row.setPhotoURL(other_user.getUserPhotoUrl());
-                    chat_row.setUnreadMessage(final_count);
+                    chat_row.setUnreadMessage(unreadMessages);
                     chats.add(chat_row);
                     settingRecyclerView(chats);
                 }
