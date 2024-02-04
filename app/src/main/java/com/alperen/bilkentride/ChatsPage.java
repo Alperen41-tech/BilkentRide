@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.alperen.bilkentride.Classes.Chat;
+import com.alperen.bilkentride.Classes.Message;
 import com.alperen.bilkentride.Classes.User;
 import com.alperen.bilkentride.Classes.Utilities;
 import com.alperen.bilkentride.Classes.ChatUserShowCase;
@@ -101,8 +102,18 @@ public class ChatsPage extends AppCompatActivity {
 
             Chat chat = doc.toObject(Chat.class);
 
+
             String my_Id = my_auth.getUid();
             String other_Id = "";
+
+            int unreadMessages = 0;
+            for (Message m: chat.getMessagesOnThisChat()){
+                if (m.getSentById().equals(other_Id) && !m.isRead()){
+                    unreadMessages++;
+                }
+            }
+
+            final int final_count = unreadMessages;
 
             if (my_Id.equals(chat.getFirstUserId())){
                 other_Id = chat.getSecondUserId();
@@ -121,7 +132,7 @@ public class ChatsPage extends AppCompatActivity {
                     chat_row.setName(other_user.getUserName());
                     chat_row.setSurname(other_user.getUserSurname());
                     chat_row.setPhotoURL(other_user.getUserPhotoUrl());
-                    chat_row.setUnreadMessage(chat.getUnreadMessages());
+                    chat_row.setUnreadMessage(final_count);
                     chats.add(chat_row);
                     settingRecyclerView(chats);
                 }
