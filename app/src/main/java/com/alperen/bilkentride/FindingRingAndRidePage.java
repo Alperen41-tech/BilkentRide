@@ -37,11 +37,11 @@ public class FindingRingAndRidePage extends AppCompatActivity {
         binding = ActivityFindingRingAndRidePageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        firestore = FirebaseFirestore.getInstance();
+        /*firestore = FirebaseFirestore.getInstance();
         // creating chats and messages on it to see how it goes
         Chat random = new Chat();
         random.setFirstUserId("L6tR8YQvULOa8l4qoO5waWARJum1");
-        random.setSecondUserId("YIAmVBLv3cNcuXIalwtHEAZa77x2");
+        random.setSecondUserId("DC6UMCYhemaBo7ofVlUEIIhSSvp2");
 
         ArrayList<String> list = new ArrayList<>();
         list.add(random.getFirstUserId());
@@ -49,10 +49,8 @@ public class FindingRingAndRidePage extends AppCompatActivity {
 
         random.setCompOfId(list);
 
-        Map<String, Object> hebele = new HashMap<>();
-        hebele.put("lastDateChanged", FieldValue.serverTimestamp());
 
-        firestore.collection("Chats").document("hebele1").set(random).addOnSuccessListener(new OnSuccessListener<Void>() {
+        firestore.collection("Chats").document("hebele3").set(random).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
                 Utilities.showToast(FindingRingAndRidePage.this , "Chat is set");
@@ -60,7 +58,17 @@ public class FindingRingAndRidePage extends AppCompatActivity {
         });
 
 
-        //firestore.collection("Chats").document("hebele1").update(hebele);
+        Map<String, Object> hebele = new HashMap<>();
+        hebele.put("lastDateChanged", FieldValue.serverTimestamp());
+
+        firestore.collection("Chats").document("hebele3").update(hebele);*/
+
+        /*firestore.collection("Chats").add(random).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                Utilities.showToast(FindingRingAndRidePage.this, "chat is created");
+            }
+        });*/
 
 
     }
