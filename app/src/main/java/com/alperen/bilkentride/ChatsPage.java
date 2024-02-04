@@ -113,7 +113,7 @@ public class ChatsPage extends AppCompatActivity {
                 }
             }
 
-            final int final_count = 5;
+            final int final_count = unreadMessages;
 
             if (my_Id.equals(chat.getFirstUserId())){
                 other_Id = chat.getSecondUserId();
@@ -132,7 +132,7 @@ public class ChatsPage extends AppCompatActivity {
                     chat_row.setName(other_user.getUserName());
                     chat_row.setSurname(other_user.getUserSurname());
                     chat_row.setPhotoURL(other_user.getUserPhotoUrl());
-                    chat_row.setUnreadMessage(5);
+                    chat_row.setUnreadMessage(final_count);
                     chats.add(chat_row);
                     settingRecyclerView(chats);
                 }
