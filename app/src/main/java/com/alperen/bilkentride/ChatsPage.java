@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 
 import com.alperen.bilkentride.Classes.Chat;
 import com.alperen.bilkentride.Classes.Message;
@@ -46,6 +47,8 @@ public class ChatsPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+
         super.onCreate(savedInstanceState);
         binding = ActivityChatsPageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
