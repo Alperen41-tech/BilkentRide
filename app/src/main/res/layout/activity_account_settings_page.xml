@@ -49,12 +49,13 @@
         android:id="@+id/biography"
         android:layout_width="297dp"
         android:layout_height="94dp"
+        android:layout_marginTop="260dp"
         android:fontFamily="serif"
         android:text="Biography"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.385"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.335" />
@@ -71,54 +72,48 @@
 
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        style="@style/Regular_LinearLayout_ForTop"
-        android:gravity="center_vertical"
+        android:background="@color/red"
+        android:layout_height="60dp"
+        android:layout_width="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center_vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
 
         <ImageButton
-            android:id="@+id/chatButton1"
+            android:id="@+id/chatButton5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="67dp"
-            android:layout_marginRight="50dp"
+            android:layout_weight="1"
             android:background="#00FFFFFF"
-            android:onClick="chatButtonClicked"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton2"
-            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="chatButton1Clicked"
             app:srcCompat="@drawable/chat_button" />
 
         <ImageButton
-            android:id="@+id/mainPageButton1"
+            android:id="@+id/mainPageButton5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
+            android:layout_weight="1"
             android:background="#00FFFFFF"
             android:onClick="mainPageButtonClicked"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:scaleType="fitCenter"
             app:srcCompat="@drawable/main_page_button" />
 
-        <ImageButton
-            android:id="@+id/profileButton1"
+
+        <ImageView
+            android:id="@+id/profileButton5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
             android:background="#00FFFFFF"
-            android:onClick="profileButtonClicked"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageButton2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/profile_button" />
+            android:layout_weight="1"
+            android:gravity="end"
+            android:scaleType="fitCenter"
+            android:onClick="profileButton5Clicked"
+            app:srcCompat="@drawable/profile_button"></ImageView>
+
     </LinearLayout>
 
 
@@ -139,6 +134,7 @@
         android:id="@+id/preferencesButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="628dp"
         android:onClick="preferencesButtonClicked"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -177,6 +173,7 @@
         android:id="@+id/email_show"
         android:layout_width="match_parent"
         android:layout_height="28dp"
+        android:layout_marginTop="392dp"
         android:fontFamily="@font/ubuntu_bold"
         android:text="name.surname@ug.bilkent.edu.tr"
         android:textAlignment="center"
@@ -184,6 +181,7 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.48000002" />

@@ -30,61 +30,55 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        style="@style/Regular_LinearLayout_ForTop"
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/red"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent">
 
+
         <ImageButton
-            android:id="@+id/chatButton3"
+            android:id="@+id/chatButton5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="69dp"
-            android:layout_marginRight="50dp"
+            android:layout_weight="1"
             android:background="#00FFFFFF"
-            android:onClick="chatButtonClicked"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton2"
-            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="chatButton1Clicked"
             app:srcCompat="@drawable/chat_button" />
 
         <ImageButton
-            android:id="@+id/mainPageButton3"
+            android:id="@+id/mainPageButton5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
+            android:layout_weight="1"
             android:background="#00FFFFFF"
             android:onClick="mainPageButtonClicked"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:scaleType="fitCenter"
             app:srcCompat="@drawable/main_page_button" />
 
-        <ImageButton
-            android:id="@+id/profileButton3"
+
+        <ImageView
+            android:id="@+id/profileButton5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
+            android:layout_weight="1"
             android:background="#00FFFFFF"
-            android:onClick="profileButtonClicked"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageButton2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/profile_button" />
+            android:gravity="end"
+            android:onClick="profileButton5Clicked"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/profile_button"></ImageView>
+
     </LinearLayout>
 
     <EditText
         android:id="@+id/messageEditText"
         android:layout_width="319dp"
         android:layout_height="43dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/rounded_rectangle_black_shape_xml"
         android:ems="10"
         android:fontFamily="@font/ubuntu_bold"
@@ -92,9 +86,9 @@
         android:inputType="text"
         android:paddingLeft="10dp"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.282"
+        app:layout_constraintHorizontal_bias="0.293"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
@@ -113,8 +107,10 @@
         android:id="@+id/recyclerViewDialogue"
         android:layout_width="match_parent"
         android:layout_height="594dp"
+        android:layout_margin="2dp"
         app:layout_constraintBottom_toTopOf="@+id/messageEditText"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:layout_editor_absoluteX="29dp" />
+        app:layout_constraintVertical_bias="0.129"
+        tools:layout_editor_absoluteX="3dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
