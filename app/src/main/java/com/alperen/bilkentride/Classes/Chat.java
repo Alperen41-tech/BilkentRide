@@ -1,17 +1,21 @@
 package com.alperen.bilkentride.Classes;
 
+import android.os.Looper;
+
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.FieldValue;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
 
 public class Chat {
     private String firstUserId;
     private String secondUserId;
     private ArrayList<Message> messagesOnThisChat;
     private int unreadMessages;
-    //private Object lastChangedDate;
+    //private FieldValue lastChangedDate;
 
     private ArrayList<String> compOfId;
 
@@ -69,7 +73,7 @@ public class Chat {
         this.unreadMessages = count;
     }
 
-    /*public Object getLastChangedDate() {
+    /*public FieldValue getLastChangedDate() {
         return lastChangedDate;
     }
 
@@ -96,6 +100,9 @@ public class Chat {
 
         return count;
     }
+
+
+
 
 
 }
