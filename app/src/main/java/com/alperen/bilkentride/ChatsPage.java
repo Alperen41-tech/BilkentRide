@@ -71,11 +71,12 @@ public class ChatsPage extends AppCompatActivity {
 
         firestore.collection("Chats")
                 .whereArrayContains("compOfId", my_auth.getUid())
-                
+
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                         if (error != null){
+                            System.out.println("errroooo burdaaaaaa");
                             Utilities.showToast(ChatsPage.this, error.getLocalizedMessage());
                         }
 
