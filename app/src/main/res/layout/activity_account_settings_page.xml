@@ -49,13 +49,12 @@
         android:id="@+id/biography"
         android:layout_width="297dp"
         android:layout_height="94dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="240dp"
         android:fontFamily="serif"
         android:text="Biography"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.335" />
@@ -134,14 +133,13 @@
         android:id="@+id/preferencesButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="628dp"
         android:onClick="preferencesButtonClicked"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.249"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.856"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.853"
         app:srcCompat="@drawable/preferences_button" />
 
     <ImageView
@@ -173,18 +171,15 @@
         android:id="@+id/email_show"
         android:layout_width="match_parent"
         android:layout_height="28dp"
-        android:layout_marginTop="392dp"
         android:fontFamily="@font/ubuntu_bold"
         android:text="name.surname@ug.bilkent.edu.tr"
         android:textAlignment="center"
         android:textColor="@color/black_60"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.48000002" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/editProfileButton"
