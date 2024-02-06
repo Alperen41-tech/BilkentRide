@@ -180,6 +180,36 @@ public class DialogPage extends AppCompatActivity {
 
     public void backButtonClicked(View view)
     {
+
+
+        firestore.collection("Chats")
+                .whereIn("firstUserId", Arrays.asList(my_ıd, other_ıd))
+                .whereIn("secondUserId", Arrays.asList(my_ıd, other_ıd)).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+
+                        for (DocumentSnapshot doc: queryDocumentSnapshots){
+
+                            String doc_Id = doc.getId();
+                            Chat c = doc.toObject(Chat.class);
+                            for (Message m: c.getMessagesOnThisChat()){
+                                if (m.getSentById().equals(other_ıd) && !m.isRead()){
+                                    m.setRead(true);
+                                }
+                            }
+
+                            firestore.collection("Chats").document(doc_Id).update("messagesOnThisChat", c.getMessagesOnThisChat());
+
+                        }
+
+
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Utilities.showToast(DialogPage.this, e.getLocalizedMessage());
+                    }
+                });
         Intent intent = new Intent(DialogPage.this, ChatsPage.class);
         startActivity(intent);
         finish();

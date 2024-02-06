@@ -76,7 +76,12 @@ public class FindingRingAndRidePage extends AppCompatActivity {
         Map<String, Object> hebele = new HashMap<>();
         hebele.put("lastDateChanged", FieldValue.serverTimestamp());
 
-        firestore.collection("Chats").document("hebele4").update(hebele);
+        firestore.collection("Chats").document("hebele4").update(hebele).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Utilities.showToast(FindingRingAndRidePage.this, "updated");
+            }
+        });
 
         /*firestore.collection("Chats").add(random).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
