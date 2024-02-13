@@ -46,4 +46,11 @@
         <item>Tourism and Hotel Management</item>
     </string-array>
 
+    <string-array name="locations">
+        <item>Please Choose Location From the List below</item>
+        <item>Bilkent Üniversitesi Rektörlük Binası</item>
+        <item>Bilkent Üniversitesi 92. Yurt</item>
+
+    </string-array>
+
 </resources>

@@ -7,93 +7,58 @@
     android:backgroundTint="#00FFFFFF"
     tools:context=".MakingRidePage">
 
-    <EditText
-        android:id="@+id/whereToEditText"
-        android:layout_width="282dp"
-        android:layout_height="40dp"
-        android:background="@drawable/rectange_red_shape"
-        android:ems="10"
-        android:fontFamily="@font/ubuntu_bold"
-        android:hint="Choose the Arrival Point"
-        android:inputType="text"
-        android:paddingLeft="10dp"
-        android:textColor="@color/gray"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.449" />
-
     <ImageView
         android:id="@+id/imageView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
-        android:onClick="locationButtonClicked"
-        app:layout_constraintBottom_toBottomOf="@+id/whereToEditText"
-        app:layout_constraintEnd_toEndOf="@+id/whereToEditText"
+        app:layout_constraintBottom_toBottomOf="@+id/whereToSpinner"
         app:layout_constraintTop_toBottomOf="@+id/whereToText"
-        app:layout_constraintVertical_bias="0.68"
-        app:srcCompat="@drawable/location_symbol" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/location_symbol"
+        tools:layout_editor_absoluteX="358dp" />
 
     <TextView
         android:id="@+id/whereToText"
         android:layout_width="219dp"
         android:layout_height="22dp"
+        android:layout_marginBottom="36dp"
         android:background="@drawable/rounded_rectangle_red_text_view_2"
         android:fontFamily="@font/ubuntu_bold"
         android:gravity="center"
         android:text="Where To"
         android:textColor="#FFFFFF"
         android:textSize="21sp"
-        app:layout_constraintBottom_toTopOf="@+id/whereToEditText"
-        app:layout_constraintEnd_toEndOf="@+id/whereToEditText"
-        app:layout_constraintStart_toStartOf="@+id/whereToEditText"
-        app:layout_constraintTop_toBottomOf="@+id/whereFromEditText"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <EditText
-        android:id="@+id/whereFromEditText"
-        android:layout_width="282dp"
-        android:layout_height="40dp"
-        android:background="@drawable/rectange_red_shape"
-        android:ems="10"
-        android:fontFamily="@font/ubuntu_bold"
-        android:hint="Choose the Begining Point"
-        android:inputType="text"
-        android:paddingLeft="10dp"
-        android:textColor="@color/gray"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/whereToSpinner"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.271" />
+        app:layout_constraintTop_toBottomOf="@+id/whereFromSpinner"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="188dp"
         android:layout_height="47dp"
+        android:layout_marginStart="-10dp"
         android:fontFamily="@font/ubuntu_bolditalic"
-        android:text="TextView"
+        android:text="Don’t know which building?\nSelect the points using Map"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/letsFindTraveller"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.607"
-        tools:text="Don’t know which building?\nSelect the points using Map" />
+        app:layout_constraintVertical_bias="0.607" />
 
     <ImageView
         android:id="@+id/mapButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:onClick="mapButtonClicked"
         app:layout_constraintBottom_toBottomOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="@+id/letsFindTraveller"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView6"
         app:layout_constraintTop_toTopOf="@+id/textView6"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/map_symbol" />
 
     <Button
@@ -122,22 +87,21 @@
         android:text="Where From"
         android:textColor="#FFFFFF"
         android:textSize="21sp"
-        app:layout_constraintBottom_toTopOf="@+id/whereFromEditText"
-        app:layout_constraintEnd_toEndOf="@+id/whereFromEditText"
-        app:layout_constraintStart_toStartOf="@+id/whereFromEditText"
+        app:layout_constraintBottom_toTopOf="@+id/whereFromSpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.834" />
 
     <ImageView
         android:id="@+id/imageView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
-        android:onClick="locationButtonClicked"
-        app:layout_constraintBottom_toBottomOf="@+id/whereFromEditText"
-        app:layout_constraintEnd_toEndOf="@+id/whereFromEditText"
+        android:layout_marginStart="28dp"
+        app:layout_constraintBottom_toBottomOf="@+id/whereFromSpinner"
+        app:layout_constraintStart_toEndOf="@+id/whereFromText"
         app:layout_constraintTop_toBottomOf="@+id/whereFromText"
-        app:layout_constraintVertical_bias="0.812"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/location_symbol" />
 
     <LinearLayout
@@ -214,5 +178,26 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/profile_button" />
     </LinearLayout>
+
+    <Spinner
+        android:id="@+id/whereFromSpinner"
+        android:layout_width="430dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.02" />
+
+    <Spinner
+        android:id="@+id/whereToSpinner"
+        android:layout_width="430dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

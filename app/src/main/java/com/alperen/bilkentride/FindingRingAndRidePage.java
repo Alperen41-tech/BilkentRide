@@ -95,6 +95,8 @@ public class FindingRingAndRidePage extends AppCompatActivity {
 
     public void makeRideButtonClicked(View view)
     {
+        Intent intent = new Intent(this, MakingRidePage.class);
+        startActivity(intent);
 
     }
 

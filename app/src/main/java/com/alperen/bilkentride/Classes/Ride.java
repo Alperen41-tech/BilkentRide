@@ -26,11 +26,11 @@ public class Ride {
         this.isSelected = isSelected;
     }
 
-    public String getRideId() {
+    public String getRiderId() {
         return riderId;
     }
 
-    public void setRideId(String riderId) {
+    public void setRiderId(String riderId) {
         this.riderId = riderId;
     }
 
