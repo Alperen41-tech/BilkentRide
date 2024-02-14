@@ -19,7 +19,7 @@
             style="@style/Regular_Backwards_Arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="backButtonClicked"></ImageButton>
+            android:onClick="backButtonClickedDialogue"></ImageButton>
 
         <TextView
             android:id="@+id/hostNameText"

@@ -178,7 +178,7 @@ public class DialogPage extends AppCompatActivity {
     }
 
 
-    public void backButtonClicked(View view)
+    public void backButtonClickedDialogue(View view)
     {
 
 
