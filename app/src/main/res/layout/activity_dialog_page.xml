@@ -74,43 +74,42 @@
 
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/messageEditText"
-        android:layout_width="319dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="28dp"
-        android:background="@drawable/rounded_rectangle_black_shape_xml"
-        android:ems="10"
-        android:fontFamily="@font/ubuntu_bold"
-        android:hint="Write your message ..."
-        android:inputType="text"
-        android:paddingLeft="10dp"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/sendMessageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="sendMessageButtonClicked"
-        app:layout_constraintBottom_toBottomOf="@+id/messageEditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.291"
-        app:layout_constraintStart_toEndOf="@+id/messageEditText"
-        app:layout_constraintTop_toTopOf="@+id/messageEditText"
-        app:layout_constraintVertical_bias="0.666"
-        app:srcCompat="@drawable/send_message_button" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewDialogue"
         android:layout_width="match_parent"
-        android:layout_height="594dp"
+        android:layout_height="300dp"
         android:layout_margin="2dp"
-        app:layout_constraintBottom_toTopOf="@+id/messageEditText"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.129"
         tools:layout_editor_absoluteX="3dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <EditText
+            android:id="@+id/messageEditText"
+            android:layout_width="319dp"
+            android:layout_height="43dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_rectangle_black_shape_xml"
+            android:fontFamily="@font/ubuntu_bold"
+            android:hint="Write your message ..."
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/sendMessageButton"
+            android:layout_width="53dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="sendMessageButtonClicked"
+            app:srcCompat="@drawable/send_message_button" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
