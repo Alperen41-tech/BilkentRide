@@ -199,6 +199,9 @@ public class DialogPage extends AppCompatActivity {
                             }
 
                             firestore.collection("Chats").document(doc_Id).update("messagesOnThisChat", c.getMessagesOnThisChat());
+                            Intent intent = new Intent(DialogPage.this, ChatsPage.class);
+                            startActivity(intent);
+                            finish();
 
                         }
 
@@ -210,9 +213,7 @@ public class DialogPage extends AppCompatActivity {
                         Utilities.showToast(DialogPage.this, e.getLocalizedMessage());
                     }
                 });
-        Intent intent = new Intent(DialogPage.this, ChatsPage.class);
-        startActivity(intent);
-        finish();
+
 
     }
 
