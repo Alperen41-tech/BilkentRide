@@ -45,7 +45,7 @@ public class WaitingRoomPage extends AppCompatActivity {
 
                 int min = (int) (millisUntilFinished / 60000);
 
-                time_remaining = "Remaining time: " + min  +" min " +  millisUntilFinished % 60000 + " sec";
+                time_remaining = "Remaining time: " + min  +" min " +  (millisUntilFinished % 60000)/1000 + " sec";
                 binding.remainingTimeText.setText(time_remaining);
             }
 
