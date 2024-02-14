@@ -62,7 +62,7 @@ public class WaitingRoomPage extends AppCompatActivity {
                     }
                 });
             }
-        };
+        }.start();
 
 
 
