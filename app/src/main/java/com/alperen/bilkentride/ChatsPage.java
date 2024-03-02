@@ -192,7 +192,7 @@ public class ChatsPage extends AppCompatActivity {
         finish();
     }
 
-    public void profileButtonClicked(View view)
+    public void AccountSettingsClicked(View view)
     {
         Intent intent = new Intent(this, AccountSettingsPage.class);
         startActivity(intent);
@@ -205,6 +205,13 @@ public class ChatsPage extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+
+    public void chatsPageChatButtonClicked(View view){
+        //do nothing;
+    }
+
+
 
 
 

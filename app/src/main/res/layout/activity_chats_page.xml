@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#00FFFFFF"
-            android:onClick="chatButton1Clicked"
+            android:onClick="chatsPageChatButtonClicked"
             app:srcCompat="@drawable/chat_button" />
 
         <ImageButton
@@ -67,11 +67,11 @@
             android:id="@+id/profileButton5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#00FFFFFF"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:gravity="end"
+            android:onClick="AccountSettingsClicked"
             android:scaleType="fitCenter"
-            android:onClick="profileButton5Clicked"
             app:srcCompat="@drawable/profile_button"></ImageView>
 
     </LinearLayout>

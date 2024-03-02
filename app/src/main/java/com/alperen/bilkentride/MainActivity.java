@@ -25,12 +25,15 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+
     private ActivityMainBinding binding;
 
 
     private FirebaseAuth my_auth;
 
-    private SharedPreferences sharing;
+    private static SharedPreferences sharing;
 
 
 
@@ -45,15 +48,28 @@ public class MainActivity extends AppCompatActivity {
         my_auth = FirebaseAuth.getInstance();
 
         sharing = MainActivity.this.getSharedPreferences("com.alperen.bilkentride", MODE_PRIVATE);
+
         boolean remembered = sharing.getBoolean("isRemembered", false);
+        boolean hasRide = sharing.getBoolean("hasRide", false);
 
         FirebaseUser user = my_auth.getCurrentUser();
 
 
 
-        if (remembered && user != null){
-            System.out.println("Buraddaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        if (remembered && user != null && hasRide){
+            Intent intent = new Intent(MainActivity.this, WaitingRoomPage.class);
+            startActivity(intent);
+            finish();
+        }
+
+        else if (remembered && user != null && !hasRide){
             Intent intent = new Intent(MainActivity.this, FindingRingAndRidePage.class);
+            startActivity(intent);
+            finish();
+        }
+
+        else if (!remembered && user != null && hasRide){
+            Intent intent = new Intent(MainActivity.this, WaitingRoomPage.class);
             startActivity(intent);
             finish();
         }
@@ -113,5 +129,10 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, ForgotPassword.class);
         startActivity(intent);
+    }
+
+
+    public static SharedPreferences getSharing(){
+        return sharing;
     }
 }

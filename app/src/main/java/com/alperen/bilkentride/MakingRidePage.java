@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import kotlinx.coroutines.flow.SharingCommand;
 import okhttp3.internal.Util;
 
 public class MakingRidePage extends AppCompatActivity {
@@ -131,6 +132,10 @@ public class MakingRidePage extends AppCompatActivity {
             firestore.collection("Rides").document(my_auth.getUid()).set(ride).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void unused) {
+
+                    MainActivity.getSharing().edit().putBoolean("hasRide", true).apply();
+
+
                     Intent intent = new Intent(MakingRidePage.this, WaitingRoomPage.class);
                     startActivity(intent);
                     finish();
