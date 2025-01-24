@@ -1,5 +1,5 @@
 # Bilkent-Ride
-An Android application being developed by Furkan Karademir and me as a personal project
+An Android application being developed by Furkan Karademir and Alperen Karslıoğlu as a personal project
 (Written in Java using Android Studio).
 Our purpose was to solve one of the most frequent problems that people face daily:
 Transportation.
